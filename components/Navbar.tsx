@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
   `;
 
   const NavLink = ({ children, href = "#" }: { children: React.ReactNode; href?: string }) => (
-    <a href={href} className="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-1 group">
+    <a href={href} className="text-sm font-light text-white hover:text-white/80 transition-colors flex items-center gap-1 group">
       {children}
     </a>
   );
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
                <div className="w-full h-[1px] bg-black rotate-45 transform origin-center scale-150"></div>
                <div className="absolute w-[1px] h-full bg-black -rotate-45 transform origin-center scale-150 left-[45%]"></div>
             </div>
-            <span className="text-lg font-semibold tracking-tight text-white">Zeba</span>
+            <span className="text-lg font-light tracking-tight text-white">Zeba</span>
           </a>
 
           {/* Desktop Links - Centered */}
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
             <div className="relative">
               <button
                 onClick={handleSolutionsClick}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-1 group"
+                className="text-sm font-light text-white hover:text-white/80 transition-colors flex items-center gap-1 group"
               >
                 Solutions <ChevronDown size={12} className={`text-gray-500 group-hover:text-white transition-all ${isSolutionsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>

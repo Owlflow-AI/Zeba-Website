@@ -4,11 +4,11 @@ import { ArrowRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
-      {/* Background Image - GCC/Dubai Theme */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1546412414-e1885259563a?q=80&w=2574&auto=format&fit=crop"
-          alt="Dubai Skyline Modern Architecture"
+          src="https://images.unsplash.com/photo-1506792006437-256b665541e2?q=80&w=2574&auto=format&fit=crop"
+          alt="People connecting and communicating"
           className="w-full h-full object-cover opacity-60 scale-105 animate-[pulse_60s_ease-in-out_infinite_alternate]"
         />
         {/* Gradient Overlay for Text Readability */}
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-16 sm:pt-20">
 
         {/* Announcement Pill with Dot */}
-        <div className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-md text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white cursor-pointer hover:bg-white/20 transition-colors animate-fade-in-down">
+        <div className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-md text-[10px] md:text-xs font-light uppercase tracking-widest text-white cursor-pointer hover:bg-white/20 transition-colors animate-fade-in-down">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
@@ -29,12 +29,12 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] leading-[1.05] text-white tracking-tight max-w-6xl mx-auto mb-4 sm:mb-6 drop-shadow-2xl animate-fade-in" style={{ animationDelay: '0.1s' }}>
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] leading-[1.05] text-white tracking-tight max-w-6xl mx-auto mb-4 sm:mb-6 drop-shadow-2xl animate-fade-in font-light" style={{ animationDelay: '0.1s' }}>
           <span className="block">AI that talks like a human.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-200 font-light mb-10 sm:mb-12 tracking-wide drop-shadow-lg max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <p className="text-base sm:text-lg md:text-xl text-white font-light mb-10 sm:mb-12 tracking-wide drop-shadow-lg max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
           Zeba Calls AI agents for enterprise support. Automate GCC and global voice communications with natural conversations.
         </p>
 
