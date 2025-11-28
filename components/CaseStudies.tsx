@@ -117,12 +117,12 @@ const CaseStudies: React.FC = () => {
             {tripleStudies.map((study, index) => (
               <div
                 key={index}
-                className="min-w-[90vw] sm:min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12 snap-center relative group flex-shrink-0"
+                className="min-w-[280px] sm:min-w-[320px] md:min-w-[400px] lg:min-w-[500px] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-8 snap-center relative group flex-shrink-0"
                 style={{ backgroundColor: study.bg }}
               >
-                <div className="flex-1 md:text-center lg:text-left">
+                <div className="text-left">
                     <h3
-                      className="text-3xl sm:text-4xl font-bold tracking-tight"
+                      className="text-2xl sm:text-3xl font-bold tracking-tight"
                       style={{ color: study.textColor }}
                     >
                       {study.company}
@@ -136,9 +136,9 @@ const CaseStudies: React.FC = () => {
                       </span>
                     )}
                 </div>
-                <div className="flex-1 space-y-6 sm:space-y-8 relative z-10">
+                <div className="space-y-4 sm:space-y-6 relative z-10">
                     <p
-                      className="text-lg sm:text-xl md:text-2xl leading-tight"
+                      className="text-sm sm:text-base leading-relaxed"
                       style={{ color: study.textColor }}
                     >
                        {study.description}

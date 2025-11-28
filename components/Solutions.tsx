@@ -29,9 +29,15 @@ const Solutions: React.FC = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={200} className="lg:w-1/2 flex flex-col justify-end">
-            <p className="text-gray-400 text-base sm:text-lg">
+            <p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
               Tailored voice agents that understand the nuances of your business sector.
             </p>
+            <div>
+              <button className="group flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors">
+                Book a demo
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </ScrollReveal>
         </div>
 
@@ -56,17 +62,9 @@ const Solutions: React.FC = () => {
               >
                 <h3 className="text-lg sm:text-xl font-medium mb-1.5 sm:mb-2 text-white">{tab.label}</h3>
                 {activeTab === tab.id && (
-                  <>
-                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-xs animate-in fade-in slide-in-from-left-2 duration-300 mb-6">
-                      {tab.description}
-                    </p>
-                    <div className="flex justify-end">
-                      <button className="group flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors">
-                        Book a demo
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-xs animate-in fade-in slide-in-from-left-2 duration-300">
+                    {tab.description}
+                  </p>
                 )}
               </div>
               ))}
