@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Logos Footer */}
-      <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-24 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
             {/* Simple SVG Placeholders for logos */}
             <div className="h-5 sm:h-6 flex items-center gap-2">
