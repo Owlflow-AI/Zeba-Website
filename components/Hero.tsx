@@ -11,6 +11,8 @@ const Hero: React.FC = () => {
           alt="People on beach during daytime"
           className="w-full h-full object-cover scale-105"
         />
+        {/* Bottom gradient overlay for seamless transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-16 sm:pt-20">
@@ -44,7 +46,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Logos Footer */}
-      <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+      <div className="absolute bottom-20 sm:bottom-24 md:bottom-28 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-24 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
             {/* Simple SVG Placeholders for logos */}
             <div className="h-5 sm:h-6 flex items-center gap-2">
