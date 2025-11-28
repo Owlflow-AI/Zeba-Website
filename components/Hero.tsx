@@ -31,7 +31,6 @@ const Hero: React.FC = () => {
         {/* Main Headline */}
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] leading-[1.05] text-white tracking-tight max-w-6xl mx-auto mb-4 sm:mb-6 drop-shadow-2xl animate-fade-in" style={{ animationDelay: '0.1s' }}>
           <span className="block">AI that talks like a human.</span>
-          <span className="block text-gray-200">Handles millions of calls.</span>
         </h1>
 
         {/* Subheadline */}
