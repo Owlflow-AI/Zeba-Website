@@ -14,6 +14,14 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleSolutionsClick = () => {
+    setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
+  };
+
+  const handleDropdownLinkClick = () => {
+    setIsSolutionsDropdownOpen(false);
+  };
+
   // Base styles for the nav container
   const navContainerClasses = `
     fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]
@@ -51,30 +59,32 @@ const Navbar: React.FC = () => {
           {/* Desktop Links - Centered */}
           <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             <NavLink href="#features">Features</NavLink>
-            <div
-              className="relative"
-              onMouseEnter={() => setIsSolutionsDropdownOpen(true)}
-              onMouseLeave={() => setIsSolutionsDropdownOpen(false)}
-            >
-              <button className="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-1 group">
-                Solutions <ChevronDown size={12} className="text-gray-500 group-hover:text-white transition-colors" />
+            <div className="relative">
+              <button
+                onClick={handleSolutionsClick}
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-1 group"
+              >
+                Solutions <ChevronDown size={12} className={`text-gray-500 group-hover:text-white transition-all ${isSolutionsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {isSolutionsDropdownOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200"
+                  onMouseLeave={() => setIsSolutionsDropdownOpen(false)}
+                >
                   <div className="p-2">
-                    <a href="#solutions" className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
+                    <a href="#solutions" onClick={handleDropdownLinkClick} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
                       <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xs">Tr</div>
                       <span className="text-sm text-gray-300 group-hover:text-white">Trading</span>
                     </a>
-                    <a href="#solutions" className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
+                    <a href="#solutions" onClick={handleDropdownLinkClick} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
                       <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 text-xs">Fi</div>
                       <span className="text-sm text-gray-300 group-hover:text-white">Fintech</span>
                     </a>
-                    <a href="#solutions" className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
+                    <a href="#solutions" onClick={handleDropdownLinkClick} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
                       <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 text-xs">Re</div>
                       <span className="text-sm text-gray-300 group-hover:text-white">Real Estate</span>
                     </a>
-                    <a href="#solutions" className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
+                    <a href="#solutions" onClick={handleDropdownLinkClick} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
                       <div className="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 text-xs">Hc</div>
                       <span className="text-sm text-gray-300 group-hover:text-white">Health Care</span>
                     </a>
