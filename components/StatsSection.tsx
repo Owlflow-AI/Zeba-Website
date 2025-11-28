@@ -9,8 +9,7 @@ const StatsSection: React.FC = () => {
           
           {/* Left Text */}
           <div className="max-w-md relative">
-             <div className="absolute -top-8 sm:-top-10 md:-top-12 left-0 w-10 h-10 sm:w-12 sm:h-12 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-light leading-snug text-gray-100 pt-2 sm:pt-3 md:pt-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-light leading-snug text-gray-100">
               Solve your most complex support issues with AI, up and running in two weeks.
             </h2>
           </div>
