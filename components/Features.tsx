@@ -1,0 +1,33 @@
+import React from 'react';
+import { Share2, User, Globe, MessageSquare, ArrowRightLeft, BarChart3 } from 'lucide-react';
+
+const Features: React.FC = () => {
+  const features = [
+    { icon: <Share2 />, title: "Multichannel Outreach", desc: "Reach leads everywhere." },
+    { icon: <User />, title: "Human-like AI", desc: "Natural, context-aware." },
+    { icon: <Globe />, title: "24/7 Multilingual", desc: "Any time, any language." },
+    { icon: <MessageSquare />, title: "Smart Follow-ups", desc: "Automatic re-engagement." },
+    { icon: <ArrowRightLeft />, title: "Seamless Handoff", desc: "Instant team transfer." },
+    { icon: <BarChart3 />, title: "Real-time Analytics", desc: "Data-driven insights." },
+  ];
+
+  return (
+    <section className="bg-black py-24 border-t border-white/5">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+          {features.map((feature, index) => (
+            <div key={index} className="bg-[#050505] p-10 hover:bg-[#0a0a0a] transition-colors group">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-6 text-gray-400 group-hover:text-white group-hover:bg-white/10 transition-all">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-medium text-white mb-2">{feature.title}</h3>
+              <p className="text-gray-500 text-sm group-hover:text-gray-400 transition-colors">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Features;

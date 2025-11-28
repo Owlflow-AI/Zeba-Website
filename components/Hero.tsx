@@ -1,0 +1,77 @@
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+
+const Hero: React.FC = () => {
+  return (
+    <section className="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
+      {/* Background Image - GCC/Dubai Theme */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1546412414-e1885259563a?q=80&w=2574&auto=format&fit=crop" 
+          alt="Dubai Skyline Modern Architecture" 
+          className="w-full h-full object-cover opacity-90 scale-105 animate-[pulse_60s_ease-in-out_infinite_alternate]"
+        />
+        {/* Gradient Overlay for Text Readability - Lightened */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70"></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center pt-20">
+        
+        {/* Announcement Pill with Dot */}
+        <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-md text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white cursor-pointer hover:bg-white/20 transition-colors animate-fade-in-down">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+          </span>
+          <span className="ml-1">50+ Languages Supported</span>
+          <ArrowRight size={12} className="opacity-70 ml-1" />
+        </div>
+
+        {/* Main Headline */}
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-[6.5rem] leading-[1.05] text-white tracking-tight max-w-6xl mx-auto mb-6 drop-shadow-2xl animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <span className="block">AI that talks like a human.</span>
+          <span className="block text-gray-100">Handles millions of calls.</span>
+        </h1>
+
+        {/* Subheadline */}
+        <p className="text-lg md:text-xl text-white font-medium mb-12 tracking-wide drop-shadow-lg max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          Zeba Calls AI agents for enterprise support. Automate GCC and global voice communications with natural conversations.
+        </p>
+
+        {/* Single CTA Button */}
+        <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <button className="bg-white text-black px-10 py-4 rounded-full text-lg font-medium hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+            Talk to us
+          </button>
+        </div>
+      </div>
+
+      {/* Logos Footer */}
+      <div className="absolute bottom-12 left-0 right-0 z-10 px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-90 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500 drop-shadow-md">
+            {/* Simple SVG Placeholders for logos */}
+            <div className="h-6 flex items-center gap-2">
+                <div className="w-5 h-5 bg-white rounded-full"></div>
+                <span className="text-sm font-bold tracking-widest text-white uppercase shadow-black drop-shadow-sm">Postman</span>
+            </div>
+            <div className="h-6 flex items-center gap-1">
+                <span className="text-2xl font-serif italic text-white shadow-black drop-shadow-sm">rio</span>
+                <span className="text-[0.5rem] self-start mt-1 text-white shadow-black drop-shadow-sm">LAS VEGAS</span>
+            </div>
+             <div className="h-6 flex items-center gap-2">
+                <div className="w-6 h-4 bg-white rounded-sm skew-x-12"></div>
+                <span className="text-lg font-bold tracking-wider text-white shadow-black drop-shadow-sm">DOORDASH</span>
+            </div>
+             <div className="h-6 flex items-center gap-0">
+                <span className="text-lg font-bold text-white shadow-black drop-shadow-sm">capital.com</span>
+            </div>
+             <div className="h-6 flex items-center gap-2">
+                <span className="text-lg font-bold text-white shadow-black drop-shadow-sm">afriex</span>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
