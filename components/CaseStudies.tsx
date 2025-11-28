@@ -1,23 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const CaseStudies: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = scrollContainerRef.current.offsetWidth * 0.9;
-      const newScrollLeft = direction === 'left'
-        ? scrollContainerRef.current.scrollLeft - scrollAmount
-        : scrollContainerRef.current.scrollLeft + scrollAmount;
-
-      scrollContainerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   const caseStudies = [
     {
@@ -57,6 +43,48 @@ const CaseStudies: React.FC = () => {
     }
   ];
 
+  const tripleStudies = [...caseStudies, ...caseStudies, ...caseStudies];
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = container.scrollWidth / tripleStudies.length;
+      const middleStart = cardWidth * caseStudies.length;
+      container.scrollLeft = middleStart;
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = container.scrollWidth / tripleStudies.length;
+      const scrollAmount = cardWidth;
+
+      const newScrollLeft = direction === 'left'
+        ? container.scrollLeft - scrollAmount
+        : container.scrollLeft + scrollAmount;
+
+      container.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => {
+        if (!container) return;
+
+        const totalWidth = container.scrollWidth;
+        const sectionWidth = totalWidth / 3;
+        const currentScroll = container.scrollLeft;
+
+        if (currentScroll <= 0) {
+          container.scrollLeft = sectionWidth;
+        } else if (currentScroll >= sectionWidth * 2) {
+          container.scrollLeft = sectionWidth;
+        }
+      }, 500);
+    }
+  };
+
   return (
     <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
@@ -83,13 +111,13 @@ const CaseStudies: React.FC = () => {
         <ScrollReveal delay={200}>
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 snap-x snap-mandatory scrollbar-hide"
+            className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 scrollbar-hide"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {caseStudies.map((study, index) => (
+            {tripleStudies.map((study, index) => (
               <div
                 key={index}
-                className="min-w-[90vw] sm:min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12 snap-center relative group"
+                className="min-w-[90vw] sm:min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12 snap-center relative group flex-shrink-0"
                 style={{ backgroundColor: study.bg }}
               >
                 <div className="flex-1 md:text-center lg:text-left">

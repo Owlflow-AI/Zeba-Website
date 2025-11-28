@@ -29,22 +29,16 @@ const Solutions: React.FC = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={200} className="lg:w-1/2 flex flex-col justify-end">
-            <p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
+            <p className="text-gray-400 text-base sm:text-lg">
               Tailored voice agents that understand the nuances of your business sector.
             </p>
-            <div>
-              <button className="group flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors">
-                Book a demo
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
           </ScrollReveal>
         </div>
 
         {/* Bottom Section: Use Cases on Left, Widget on Right (Same Line) */}
-        <div className="flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24 items-start lg:items-center">
+        <div className="flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-16 items-start lg:items-center">
           {/* Left: Use Cases Navigation */}
-          <ScrollReveal delay={400} className="lg:w-1/2">
+          <ScrollReveal delay={400} className="lg:w-[45%]">
             <div className="flex flex-col gap-0 border-l border-white/10 relative">
                {/* Animated active indicator */}
                <div
@@ -62,9 +56,17 @@ const Solutions: React.FC = () => {
               >
                 <h3 className="text-lg sm:text-xl font-medium mb-1.5 sm:mb-2 text-white">{tab.label}</h3>
                 {activeTab === tab.id && (
-                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-xs animate-in fade-in slide-in-from-left-2 duration-300">
-                    {tab.description}
-                  </p>
+                  <>
+                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-xs animate-in fade-in slide-in-from-left-2 duration-300 mb-6">
+                      {tab.description}
+                    </p>
+                    <div className="flex justify-end">
+                      <button className="group flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors">
+                        Book a demo
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </>
                 )}
               </div>
               ))}
@@ -72,9 +74,9 @@ const Solutions: React.FC = () => {
           </ScrollReveal>
 
           {/* Right: Widget Mockup */}
-          <ScrollReveal delay={600} className="lg:w-1/2 w-full">
-            <div className="flex items-center justify-center lg:justify-end relative">
-              <div className="relative w-full max-w-md lg:max-w-sm aspect-[4/5] sm:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden">
+          <ScrollReveal delay={600} className="lg:w-[55%] w-full">
+            <div className="flex items-center justify-center lg:justify-start relative">
+              <div className="relative w-full max-w-lg aspect-[4/5] sm:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-8 sm:p-10 lg:p-12 overflow-hidden">
 
                   {/* Background Grid */}
                   <div className="absolute inset-0 z-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
