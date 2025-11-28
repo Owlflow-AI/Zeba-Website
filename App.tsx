@@ -12,9 +12,12 @@ import { Twitter, Linkedin, Github } from 'lucide-react';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20" role="application">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">
+        Skip to main content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <StatsSection />
         <div id="solutions">
