@@ -40,9 +40,9 @@ const Hero: React.FC = () => {
 
         {/* Single CTA Button */}
         <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <button className="bg-white text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-medium hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+          <a href="https://cal.com/rahulhakhla/owlflowai" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-medium hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
             Book a Demo
-          </button>
+          </a>
         </div>
       </div>
 

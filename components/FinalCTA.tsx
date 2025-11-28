@@ -21,12 +21,12 @@ const FinalCTA: React.FC = () => {
        </ScrollReveal>
 
        <ScrollReveal delay={400}>
-         <button className="group relative z-10 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:bg-gray-200 transition-all flex items-center gap-2.5 sm:gap-3">
+         <a href="https://cal.com/rahulhakhla/owlflowai" target="_blank" rel="noopener noreferrer" className="group relative z-10 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:bg-gray-200 transition-all flex items-center gap-2.5 sm:gap-3">
             <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-black text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
                 <ChevronRight size={14} />
             </div>
             Hire Zeba
-         </button>
+         </a>
        </ScrollReveal>
     </section>
   );

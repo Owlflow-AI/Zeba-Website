@@ -44,9 +44,9 @@ const FeatureCanvas: React.FC = () => {
               The fastest way to build, govern, and scale enterprise AI agents.
             </p>
             <div className="mt-8">
-                <button className="px-5 py-2 rounded-full border border-white/20 text-sm hover:bg-white hover:text-black transition-colors">
+                <a href="https://cal.com/rahulhakhla/owlflowai" target="_blank" rel="noopener noreferrer" className="inline-block px-5 py-2 rounded-full border border-white/20 text-sm hover:bg-white hover:text-black transition-colors">
                     Explore Agent Canvas
-                </button>
+                </a>
             </div>
           </div>
 

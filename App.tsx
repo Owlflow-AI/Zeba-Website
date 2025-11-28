@@ -17,11 +17,19 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <StatsSection />
-        <Solutions />
-        <Features />
+        <div id="solutions">
+          <Solutions />
+        </div>
+        <div id="features">
+          <Features />
+        </div>
         <Testimonials />
-        <CaseStudies />
-        <FAQ />
+        <div id="case-studies">
+          <CaseStudies />
+        </div>
+        <div id="faqs">
+          <FAQ />
+        </div>
         <FinalCTA />
       </main>
       
