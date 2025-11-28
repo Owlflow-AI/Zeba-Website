@@ -9,11 +9,10 @@ const Hero: React.FC = () => {
         <img
           src="https://images.unsplash.com/photo-1652242190826-f1978b451b7f?q=80&w=2574&auto=format&fit=crop"
           alt="People on beach during daytime"
-          className="w-full h-full object-cover opacity-60 scale-105 animate-[pulse_60s_ease-in-out_infinite_alternate]"
+          className="w-full h-full object-cover opacity-90 scale-105 animate-[pulse_60s_ease-in-out_infinite_alternate]"
         />
         {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-16 sm:pt-20">
