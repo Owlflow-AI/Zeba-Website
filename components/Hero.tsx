@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2574&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1552598715-7eeb9232a2ac?q=80&w=2574&auto=format&fit=crop"
           alt="People on beach during daytime"
           className="w-full h-full object-cover opacity-60 scale-105 animate-[pulse_60s_ease-in-out_infinite_alternate]"
         />
