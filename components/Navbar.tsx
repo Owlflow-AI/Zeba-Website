@@ -22,9 +22,9 @@ const Navbar: React.FC = () => {
   // Base styles for the inner nav element
   // Removed bg-gradient-to-b from-black/80 to-transparent from the non-scrolled state
   const navInnerClasses = `
-    flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]
-    ${isScrolled 
-      ? 'w-[90%] max-w-4xl bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-full py-3 px-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)]' 
+    flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] relative
+    ${isScrolled
+      ? 'w-[90%] max-w-4xl bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-full py-3 px-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
       : 'w-full bg-transparent py-4 px-6 md:px-12 border-transparent'}
   `;
 
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
           </a>
 
           {/* Desktop Links - Centered */}
-          <div className="hidden md:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             <NavLink>Process</NavLink>
             <NavLink>Solutions <ChevronDown size={12} className="text-gray-500 group-hover:text-white transition-colors" /></NavLink>
             <NavLink>Pricing</NavLink>
