@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   // Base styles for the nav container
   const navContainerClasses = `
     fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]
-    ${isScrolled ? 'pt-6' : 'pt-6'}
+    ${isScrolled ? 'pt-3' : 'pt-3'}
   `;
 
   // Base styles for the inner nav element
