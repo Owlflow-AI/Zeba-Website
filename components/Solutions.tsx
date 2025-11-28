@@ -73,8 +73,8 @@ const Solutions: React.FC = () => {
 
           {/* Right: Widget Mockup */}
           <ScrollReveal delay={600} className="lg:w-[55%] w-full">
-            <div className="flex items-center justify-center lg:justify-start relative lg:pl-8">
-              <div className="relative w-full max-w-sm aspect-[4/5] sm:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 overflow-hidden">
+            <div className="flex items-center justify-center lg:justify-start relative lg:pl-12">
+              <div className="relative w-full max-w-md aspect-[4/5] sm:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 overflow-hidden">
 
                   {/* Background Grid */}
                   <div className="absolute inset-0 z-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
