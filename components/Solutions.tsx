@@ -12,25 +12,25 @@ const Solutions: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-black py-24 overflow-hidden border-t border-white/5">
+    <section className="relative bg-black py-16 sm:py-20 md:py-24 overflow-hidden border-t border-white/5">
       {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-blue-900/10 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16 lg:gap-24">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
         
         {/* Left Navigation */}
-        <div className="lg:w-1/3 pt-10 flex flex-col">
-          <div className="mb-12">
-            <div className="flex items-center gap-2 mb-4 text-blue-500">
-               <LayoutGrid size={20} />
-               <span className="text-sm font-mono uppercase tracking-widest text-gray-400">Solutions</span>
+        <div className="lg:w-1/3 pt-6 sm:pt-8 lg:pt-10 flex flex-col">
+          <div className="mb-8 sm:mb-10 lg:mb-12">
+            <div className="flex items-center gap-2 mb-3 sm:mb-4 text-blue-500">
+               <LayoutGrid size={18} className="sm:w-5 sm:h-5" />
+               <span className="text-xs sm:text-sm font-mono uppercase tracking-wider sm:tracking-widest text-gray-400">Solutions</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-white">Industry specific AI</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 text-white">Industry specific AI</h2>
+            <p className="text-gray-400 text-base sm:text-lg">
               Tailored voice agents that understand the nuances of your business sector.
             </p>
-            <div className="mt-8">
-                <button className="group flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-gray-200 transition-colors">
+            <div className="mt-6 sm:mt-8">
+                <button className="group flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors">
                     Book a demo
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -39,22 +39,22 @@ const Solutions: React.FC = () => {
 
           <div className="flex flex-col gap-0 border-l border-white/10 relative">
              {/* Animated active indicator */}
-             <div 
-                className="absolute left-[-1px] w-[1px] h-12 bg-white transition-all duration-300 ease-out"
-                style={{ 
-                    top: `${tabs.findIndex(t => t.id === activeTab) * 108 + 24}px` 
+             <div
+                className="absolute left-[-1px] w-[1px] h-10 sm:h-12 bg-white transition-all duration-300 ease-out"
+                style={{
+                    top: `${tabs.findIndex(t => t.id === activeTab) * (window.innerWidth < 640 ? 92 : 108) + (window.innerWidth < 640 ? 20 : 24)}px`
                 }}
              ></div>
 
             {tabs.map((tab) => (
-              <div 
+              <div
                 key={tab.id}
-                className={`pl-8 py-6 cursor-pointer group transition-all duration-300 ${activeTab === tab.id ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
+                className={`pl-6 sm:pl-8 py-5 sm:py-6 cursor-pointer group transition-all duration-300 ${activeTab === tab.id ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
                 onClick={() => setActiveTab(tab.id)}
               >
-                <h3 className="text-xl font-medium mb-2 text-white">{tab.label}</h3>
+                <h3 className="text-lg sm:text-xl font-medium mb-1.5 sm:mb-2 text-white">{tab.label}</h3>
                 {activeTab === tab.id && (
-                  <p className="text-sm text-gray-400 leading-relaxed max-w-xs animate-in fade-in slide-in-from-left-2 duration-300">
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-xs animate-in fade-in slide-in-from-left-2 duration-300">
                     {tab.description}
                   </p>
                 )}
@@ -65,15 +65,15 @@ const Solutions: React.FC = () => {
 
         {/* Right UI Widget Mockup */}
         <div className="lg:w-2/3 flex items-center justify-center relative">
-            <div className="relative w-full max-w-md aspect-[4/5] md:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-8 overflow-hidden">
+            <div className="relative w-full max-w-md aspect-[4/5] sm:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden">
                 
                 {/* Background Grid */}
                 <div className="absolute inset-0 z-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
                 
                 {/* Widget Content */}
                 <div className="relative z-10 flex flex-col items-center text-center w-full">
-                    <div className="mb-8">
-                        <span className="text-xs font-mono uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                    <div className="mb-6 sm:mb-8">
+                        <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-gray-500 bg-white/5 px-2.5 sm:px-3 py-1 rounded-full border border-white/5">
                             {tabs.find(t => t.id === activeTab)?.label} Agent
                         </span>
                     </div>
@@ -82,28 +82,28 @@ const Solutions: React.FC = () => {
                     <div className="relative group cursor-pointer">
                         {/* Pulsing Rings */}
                         <div className="absolute inset-0 bg-white/5 rounded-full animate-ping opacity-20 duration-1000"></div>
-                        <div className="absolute inset-[-12px] bg-white/5 rounded-full animate-pulse opacity-40 delay-75"></div>
-                        
-                        <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-gray-800 to-black border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:scale-105 transition-transform duration-300">
-                            <Mic size={32} className="text-white group-hover:text-blue-400 transition-colors" />
+                        <div className="absolute inset-[-10px] sm:inset-[-12px] bg-white/5 rounded-full animate-pulse opacity-40 delay-75"></div>
+
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-gray-800 to-black border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:scale-105 transition-transform duration-300">
+                            <Mic size={28} className="sm:w-8 sm:h-8 text-white group-hover:text-blue-400 transition-colors" />
                         </div>
                     </div>
 
                     {/* Audio Waveform Visualization */}
-                    <div className="h-16 flex items-center gap-1 mt-10">
+                    <div className="h-12 sm:h-16 flex items-center gap-1 mt-8 sm:mt-10">
                         {[...Array(12)].map((_, i) => (
-                             <div 
-                                key={i} 
-                                className="w-1.5 bg-white/20 rounded-full animate-[pulse_1s_ease-in-out_infinite]"
-                                style={{ 
+                             <div
+                                key={i}
+                                className="w-1 sm:w-1.5 bg-white/20 rounded-full animate-[pulse_1s_ease-in-out_infinite]"
+                                style={{
                                     height: `${Math.random() * 100}%`,
-                                    animationDelay: `${i * 0.1}s` 
+                                    animationDelay: `${i * 0.1}s`
                                 }}
                              ></div>
                         ))}
                     </div>
 
-                    <p className="mt-8 text-gray-400 text-sm font-light">
+                    <p className="mt-6 sm:mt-8 text-gray-400 text-xs sm:text-sm font-light">
                         Click to speak with our AI
                     </p>
 
