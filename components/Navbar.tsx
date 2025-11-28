@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   const navInnerClasses = `
     flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] relative
     ${isScrolled
-      ? 'w-[90%] max-w-4xl bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-full py-3 px-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
+      ? 'w-[90%] max-w-4xl backdrop-blur-fallback border border-white/10 rounded-full py-3 px-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
       : 'w-full bg-transparent py-4 px-6 md:px-12 border-transparent'}
   `;
 
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
               </button>
               {isSolutionsDropdownOpen && (
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 backdrop-blur-fallback border border-white/10 rounded-2xl overflow-hidden shadow-2xl animate-fade-in duration-200"
                   onMouseLeave={() => setIsSolutionsDropdownOpen(false)}
                 >
                   <div className="p-2">
@@ -124,8 +124,8 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      <div
+        className={`fixed inset-0 z-[60] backdrop-blur-fallback transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="flex flex-col h-full p-6">
           <div className="flex justify-between items-center mb-12">
