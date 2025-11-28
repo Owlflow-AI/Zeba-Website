@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LayoutGrid, Mic, Activity, ArrowRight, Play } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Solutions: React.FC = () => {
   const [activeTab, setActiveTab] = useState('trading');
@@ -17,36 +18,39 @@ const Solutions: React.FC = () => {
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-blue-900/10 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-12 flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
-        
+
         {/* Left Navigation */}
         <div className="lg:w-1/3 pt-6 sm:pt-8 lg:pt-10 flex flex-col">
-          <div className="mb-8 sm:mb-10 lg:mb-12">
-            <div className="flex items-center gap-2 mb-3 sm:mb-4 text-blue-500">
-               <LayoutGrid size={18} className="sm:w-5 sm:h-5" />
-               <span className="text-xs sm:text-sm font-mono uppercase tracking-wider sm:tracking-widest text-gray-400">Solutions</span>
+          <ScrollReveal>
+            <div className="mb-8 sm:mb-10 lg:mb-12">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4 text-blue-500">
+                 <LayoutGrid size={18} className="sm:w-5 sm:h-5" />
+                 <span className="text-xs sm:text-sm font-mono uppercase tracking-wider sm:tracking-widest text-gray-400">Solutions</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 text-white">Industry specific AI</h2>
+              <p className="text-gray-400 text-base sm:text-lg">
+                Tailored voice agents that understand the nuances of your business sector.
+              </p>
+              <div className="mt-6 sm:mt-8">
+                  <button className="group flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors">
+                      Book a demo
+                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+              </div>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 text-white">Industry specific AI</h2>
-            <p className="text-gray-400 text-base sm:text-lg">
-              Tailored voice agents that understand the nuances of your business sector.
-            </p>
-            <div className="mt-6 sm:mt-8">
-                <button className="group flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors">
-                    Book a demo
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-            </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="flex flex-col gap-0 border-l border-white/10 relative">
-             {/* Animated active indicator */}
-             <div
-                className="absolute left-[-1px] w-[1px] h-10 sm:h-12 bg-white transition-all duration-300 ease-out"
-                style={{
-                    top: `${tabs.findIndex(t => t.id === activeTab) * (window.innerWidth < 640 ? 92 : 108) + (window.innerWidth < 640 ? 20 : 24)}px`
-                }}
-             ></div>
+          <ScrollReveal delay={200}>
+            <div className="flex flex-col gap-0 border-l border-white/10 relative">
+               {/* Animated active indicator */}
+               <div
+                  className="absolute left-[-1px] w-[1px] h-10 sm:h-12 bg-white transition-all duration-300 ease-out"
+                  style={{
+                      top: `${tabs.findIndex(t => t.id === activeTab) * (window.innerWidth < 640 ? 92 : 108) + (window.innerWidth < 640 ? 20 : 24)}px`
+                  }}
+               ></div>
 
-            {tabs.map((tab) => (
+              {tabs.map((tab) => (
               <div
                 key={tab.id}
                 className={`pl-6 sm:pl-8 py-5 sm:py-6 cursor-pointer group transition-all duration-300 ${activeTab === tab.id ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
@@ -59,12 +63,14 @@ const Solutions: React.FC = () => {
                   </p>
                 )}
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* Right UI Widget Mockup */}
-        <div className="lg:w-2/3 flex items-center justify-center relative">
+        <ScrollReveal delay={400} className="lg:w-2/3">
+          <div className="flex items-center justify-center relative">
             <div className="relative w-full max-w-md aspect-[4/5] sm:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden">
                 
                 {/* Background Grid */}
@@ -118,7 +124,8 @@ const Solutions: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+          </div>
+        </ScrollReveal>
 
       </div>
     </section>

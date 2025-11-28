@@ -1,5 +1,6 @@
 import React from 'react';
 import { Share2, User, Globe, MessageSquare, ArrowRightLeft, BarChart3 } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Features: React.FC = () => {
   const features = [
@@ -14,17 +15,19 @@ const Features: React.FC = () => {
   return (
     <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-[#050505] p-6 sm:p-8 md:p-10 hover:bg-[#0a0a0a] transition-colors group">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center mb-4 sm:mb-6 text-gray-400 group-hover:text-white group-hover:bg-white/10 transition-all">
-                {feature.icon}
+        <ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-[#050505] p-6 sm:p-8 md:p-10 hover:bg-[#0a0a0a] transition-colors group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center mb-4 sm:mb-6 text-gray-400 group-hover:text-white group-hover:bg-white/10 transition-all">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg sm:text-xl font-medium text-white mb-2">{feature.title}</h3>
+                <p className="text-gray-500 text-xs sm:text-sm group-hover:text-gray-400 transition-colors">{feature.desc}</p>
               </div>
-              <h3 className="text-lg sm:text-xl font-medium text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-500 text-xs sm:text-sm group-hover:text-gray-400 transition-colors">{feature.desc}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

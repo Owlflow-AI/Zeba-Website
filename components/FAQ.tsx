@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -16,17 +17,19 @@ const FAQ: React.FC = () => {
     <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5">
       <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16">
         <div className="lg:w-1/3">
-           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-             Frequently asked questions
-           </h2>
+           <ScrollReveal>
+             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+               Frequently asked questions
+             </h2>
+           </ScrollReveal>
         </div>
 
         <div className="lg:w-2/3 flex flex-col gap-3 sm:gap-4">
            {faqs.map((item, index) => (
-             <div
-                key={index}
-                className="border border-white/10 rounded-lg bg-[#0a0a0a] overflow-hidden transition-all duration-300"
-             >
+             <ScrollReveal key={index} delay={index * 100}>
+               <div
+                  className="border border-white/10 rounded-lg bg-[#0a0a0a] overflow-hidden transition-all duration-300"
+               >
                 <button
                   className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left gap-3"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -39,7 +42,8 @@ const FAQ: React.FC = () => {
                 >
                    {item.a}
                 </div>
-             </div>
+               </div>
+             </ScrollReveal>
            ))}
         </div>
       </div>
