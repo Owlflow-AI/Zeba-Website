@@ -40,7 +40,7 @@ const StatsSection: React.FC = () => {
   return (
     <section ref={sectionRef} className="relative w-full bg-black py-16 sm:py-20 md:py-24 lg:py-32 border-t border-white/5">
       {/* Top Blur Shadow Effect */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black via-black/50 to-transparent pointer-events-none z-10"></div>
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black via-black/70 to-transparent pointer-events-none z-10"></div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-14 lg:gap-8 items-start">
