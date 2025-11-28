@@ -70,6 +70,9 @@ const Hero: React.FC = () => {
             </div>
         </div>
       </div>
+
+      {/* Bottom Blur Shadow Effect */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none z-10"></div>
     </section>
   );
 };
