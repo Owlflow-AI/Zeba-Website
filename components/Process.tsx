@@ -118,7 +118,7 @@ const Process: React.FC = () => {
             <ScrollReveal delay={400}>
               <div className="mt-6">
                 <a
-                  href="https://cal.com/rahulhakhla/owlflowai"
+                  href="https://calendly.com/zqamar-zebaglobalai/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-7 py-2.5 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors text-sm"
