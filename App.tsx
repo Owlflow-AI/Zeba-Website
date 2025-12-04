@@ -8,7 +8,7 @@ import Languages from './components/Languages';
 import CaseStudies from './components/CaseStudies';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
-import { Twitter, Linkedin, Github } from 'lucide-react';
+import { Linkedin, Instagram } from 'lucide-react';
 
 const App: React.FC = () => {
   return (
@@ -36,29 +36,100 @@ const App: React.FC = () => {
         <FinalCTA />
       </main>
       
-      <footer className="py-8 sm:py-10 md:py-12 border-t border-white/10 bg-black text-gray-400">
-        <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
-            <div className="flex items-center gap-2">
-                <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white flex items-center justify-center">
-                    <div className="w-1.5 sm:w-2 h-0.5 bg-black rotate-45"></div>
-                </div>
-                <span className="text-white font-medium tracking-tight text-sm sm:text-base">Zeba Calls AI</span>
+      <footer className="py-12 sm:py-16 border-t border-white/10 bg-black text-gray-400">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12">
+
+            <div className="flex items-center gap-3">
+              <img
+                src="/whatsapp_image_2025-11-30_at_19.23.46-removebg-preview.png"
+                alt="Zeba AI Logo"
+                className="h-8 sm:h-10 w-auto"
+              />
+              <span className="text-white font-semibold tracking-tight text-lg sm:text-xl">Zeba AI</span>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm">
-                <a href="#" className="hover:text-white transition-colors">Terms</a>
-                <a href="#" className="hover:text-white transition-colors">Privacy</a>
-                <a href="#" className="hover:text-white transition-colors">Cookies</a>
-                <a href="#" className="hover:text-white transition-colors">Security</a>
-            </div>
+            <nav className="flex flex-wrap gap-6 sm:gap-8 text-sm">
+              <a
+                href="#features"
+                className="hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Features
+              </a>
+              <a
+                href="#solutions"
+                className="hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Solutions
+              </a>
+              <a
+                href="#case-studies"
+                className="hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Case Studies
+              </a>
+              <a
+                href="#faqs"
+                className="hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                FAQs
+              </a>
+              <a href="#" className="hover:text-white transition-colors">Terms</a>
+            </nav>
 
-            <div className="flex gap-4 sm:gap-6">
-                <a href="#" className="hover:text-white transition-colors"><Twitter size={18} className="sm:w-5 sm:h-5" /></a>
-                <a href="#" className="hover:text-white transition-colors"><Linkedin size={18} className="sm:w-5 sm:h-5" /></a>
-                <a href="#" className="hover:text-white transition-colors"><Github size={18} className="sm:w-5 sm:h-5" /></a>
+            <div className="flex gap-5">
+              <a
+                href="https://www.instagram.com/zebaglobalai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/zeba-global-ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@zebaglobal.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors flex items-center justify-center"
+                aria-label="TikTok"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+              </a>
             </div>
+          </div>
+
+          <div className="mt-8 pt-8 border-t border-white/5 text-center">
+            <p className="text-xs opacity-50">© 2025 Zeba AI. All rights reserved.</p>
+          </div>
         </div>
-        <p className="text-center text-[10px] sm:text-xs mt-6 sm:mt-8 opacity-40">© 2024 Zeba Calls AI Inc. All rights reserved.</p>
       </footer>
     </div>
   );
