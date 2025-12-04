@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-sm sm:text-base md:text-lg text-white font-light mb-5 sm:mb-6 tracking-wide drop-shadow-lg max-w-xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <p className="text-sm sm:text-base md:text-lg text-white font-light mb-10 sm:mb-12 tracking-wide drop-shadow-lg max-w-xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
           AI calling agents tailored to your business needs
         </p>
 
@@ -46,8 +46,8 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Logos Footer */}
-      <div className="absolute bottom-2 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-        <div className="max-w-6xl mx-auto flex flex-col items-center gap-2">
+      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-4">
           <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-white/50 font-light text-center">
             integrate flawlessly with your stack
           </p>
