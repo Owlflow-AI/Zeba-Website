@@ -9,78 +9,48 @@ const CaseStudies: React.FC = () => {
   const caseStudies = [
     {
       bg: '#BFAFF2',
-      company: 'deel.',
-      subtitle: '',
-      description: 'Deel hires Zeba to pre-qualify candidates and 5x interview pass rates',
+      company: 'ECOGurus',
+      subtitle: 'Birmingham, UK',
+      description: 'ECOGurus transformed lead response times and qualification for insulation, boiler, and solar services.',
       textColor: '#1a1a1a',
       metrics: [
-        { label: 'PASS RATE', value: '5x Increase', icon: TrendingUp },
-        { label: 'TIME SAVED', value: '80%', icon: Clock },
-        { label: 'CANDIDATES', value: '10k+ Screened', icon: Users }
+        { label: 'RESPONSE TIME', value: 'Minutes', icon: Clock },
+        { label: 'LEAD QUALITY', value: 'Pre-qualified', icon: TrendingUp },
+        { label: 'FOLLOWUP', value: '24/7', icon: Users }
       ],
-      challenge: 'As a rapidly growing global payroll platform, Deel faced an overwhelming volume of job applications. Their engineering and support teams were spending thousands of hours reviewing resumes and conducting initial screening calls, often for candidates who weren\'t the right fit. They needed a way to scale their hiring without compromising quality.',
-      solution: 'Deel implemented Zeba\'s AI Voice Agents to conduct first-round technical and behavioral interviews. The agent was configured to ask role-specific questions, evaluate soft skills, and even conduct basic technical coding discussions. This allowed candidates to interview 24/7 at their convenience.',
-      results: 'After implementing Zeba, Deel saw a 5x increase in interview pass rates, reduced screening time by 80%, and successfully screened over 10,000 candidates. The AI agents handled initial assessments, allowing human recruiters to focus on high-quality candidates.'
+      challenge: 'ECOGurus Birmingham is a home energy-efficiency specialist focused on insulation, boiler upgrades, and solar panel installations. Their small office team struggled to keep up with callbacks, missed many opportunities, and spent too much time manually qualifying people who were not ready to buy. Slow response to new enquiries meant competitors often reached the customer first.',
+      solution: 'ZEBA AI Calls deployed custom AI calling agents designed specifically for ECOGurus\' three core services: insulation, boilers, and solar panels. Each agent was trained on qualification questions, compliance requirements, and booking rules. The AI called new enquiries within minutes to verify details, asked relevant service-specific questions, booked surveys directly into the team\'s calendar, and scheduled friendly followups for nurturing cold leads.',
+      results: 'ECOGurus achieved faster speed-to-lead, with more enquiries turning into actual conversations. A higher proportion of leads were fully prequalified before surveyor visits, reducing wasted trips and no-shows. The AI provided consistent followup without extra staffing costs, and generated a steady flow of survey bookings from older lead lists that had previously been written off.'
     },
     {
       bg: '#5465FF',
-      company: 'TD',
-      subtitle: 'Global Solutions',
-      description: 'TD Global reduced operational costs by 40% using Zeba for first-line support.',
+      company: 'Crescent Gate Hotel',
+      subtitle: 'Manchester, UK',
+      description: 'Crescent Gate Hotel automated reception and room service with 24/7 AI voice assistance.',
       textColor: '#ffffff',
       metrics: [
-        { label: 'COST REDUCTION', value: '40%', icon: TrendingUp },
-        { label: 'RESPONSE TIME', value: '< 30s', icon: Clock },
-        { label: 'SATISFACTION', value: '94%', icon: Users }
+        { label: 'AVAILABILITY', value: '24/7', icon: Clock },
+        { label: 'RESPONSE TIME', value: 'Instant', icon: TrendingUp },
+        { label: 'GUEST SATISFACTION', value: 'Improved', icon: Users }
       ],
-      challenge: 'TD Global Solutions was handling thousands of customer inquiries daily across multiple time zones. Their support team was overwhelmed with repetitive questions, leading to long wait times and decreased customer satisfaction. They needed an intelligent solution to handle first-line support efficiently.',
-      solution: 'TD implemented Zeba\'s AI Voice Agents to handle tier-1 support calls. The agents were trained on TD\'s knowledge base and integrated with their CRM system. They could answer common questions, troubleshoot basic issues, and seamlessly escalate complex cases to human agents.',
-      results: 'TD achieved a 40% reduction in operational costs, reduced average response time to under 30 seconds, and maintained a 94% customer satisfaction score. The AI agents handled 70% of incoming calls without human intervention, freeing up the team to focus on complex issues.'
-    },
-    {
-      bg: '#FF6B6B',
-      company: 'Stripe',
-      subtitle: '',
-      description: 'Stripe scaled customer support by 300% while maintaining 98% satisfaction scores.',
-      textColor: '#ffffff',
-      metrics: [
-        { label: 'SCALE', value: '300%', icon: TrendingUp },
-        { label: 'UPTIME', value: '24/7', icon: Clock },
-        { label: 'SATISFACTION', value: '98%', icon: Users }
-      ],
-      challenge: 'As Stripe expanded globally, their support volume increased dramatically. They needed to scale their support operations without proportionally increasing headcount, while maintaining their high standards for customer experience across different languages and time zones.',
-      solution: 'Stripe deployed Zeba\'s multilingual AI Voice Agents to handle payment inquiries, account questions, and technical troubleshooting. The agents were integrated with Stripe\'s API to provide real-time account information and transaction details securely.',
-      results: 'Stripe scaled their support capacity by 300%, achieved true 24/7 availability across all time zones, and maintained an impressive 98% customer satisfaction score. The AI agents handled support in 15+ languages with consistent quality.'
+      challenge: 'Crescent Gate Hotel is a busy city-centre property serving business travellers, event guests, and weekend visitors. The reception team had to juggle walk-in guests, check-ins, phone enquiries, and room service orders from a single desk, leading to long hold times, missed calls, and delayed in-room deliveries. Guests expecting instant responses for simple questions often experienced frustration.',
+      solution: 'ZEBA AI Calls deployed AI phone agents configured as a virtual receptionist and virtual room service assistant. The reception agent handled common calls such as reservations questions, directions, amenities, late check-in notices, and wake-up calls, routing only complex issues to staff. The room service agent integrated with the hotel\'s menu and ordering workflow so guests could place and check orders 24/7, with all requests pushed directly to the kitchen or night team.',
+      results: 'Crescent Gate Hotel transformed guest communication into a fast, reliable, always-available service layer. The hotel experienced faster response times, fewer missed calls, and more consistent handling of in-room requests, contributing to higher guest satisfaction and smoother operations for the on-site team. ZEBA AI Calls now supports reception and room service 24/7.'
     },
     {
       bg: '#4ECDC4',
-      company: 'Shopify',
-      subtitle: 'E-commerce',
-      description: 'Shopify automated 10,000+ merchant calls per day with 95% resolution rate.',
+      company: 'EasyProperties',
+      subtitle: 'London, UK',
+      description: 'EasyProperties automated lead qualification and client management for sales and lettings.',
       textColor: '#1a1a1a',
       metrics: [
-        { label: 'DAILY CALLS', value: '10,000+', icon: TrendingUp },
-        { label: 'RESOLUTION', value: '95%', icon: Clock },
-        { label: 'MERCHANTS', value: '50k+ Served', icon: Users }
+        { label: 'LEAD ENGAGEMENT', value: 'Rapid', icon: Clock },
+        { label: 'QUALIFICATION', value: 'Structured', icon: TrendingUp },
+        { label: 'STAFF TIME', value: 'Reduced', icon: Users }
       ],
-      challenge: 'Shopify\'s merchant base was growing rapidly, and with it came an explosion of support requests. Merchants needed help with store setup, payment processing, and technical issues at all hours. The support team couldn\'t keep up with the volume during peak seasons.',
-      solution: 'Shopify implemented Zeba\'s AI Voice Agents specifically trained on e-commerce workflows, payment gateway troubleshooting, and platform features. The agents could guide merchants through setup processes, resolve common issues, and provide personalized recommendations.',
-      results: 'Shopify successfully automated over 10,000 merchant calls per day with a 95% first-contact resolution rate. The solution served over 50,000 merchants monthly, significantly reducing support backlog during peak shopping seasons while improving merchant satisfaction.'
-    },
-    {
-      bg: '#FFD93D',
-      company: 'Coinbase',
-      subtitle: '',
-      description: 'Coinbase reduced support response time from 4 hours to 30 seconds with Zeba AI.',
-      textColor: '#1a1a1a',
-      metrics: [
-        { label: 'RESPONSE TIME', value: '30 seconds', icon: TrendingUp },
-        { label: 'REDUCTION', value: '98%', icon: Clock },
-        { label: 'SECURITY', value: '100% SOC2', icon: Users }
-      ],
-      challenge: 'In the volatile cryptocurrency market, Coinbase customers needed immediate support for urgent issues like transaction problems, security concerns, and account access. The existing 4-hour average response time was unacceptable for time-sensitive crypto transactions.',
-      solution: 'Coinbase deployed Zeba\'s secure AI Voice Agents with enhanced authentication protocols and real-time blockchain integration. The agents could verify transactions, explain market conditions, guide users through security features, and escalate urgent matters immediately.',
-      results: 'Coinbase reduced average support response time from 4 hours to just 30 seconds, achieving a 98% reduction in wait times. The solution maintained SOC2 compliance and handled sensitive financial inquiries with enterprise-grade security, dramatically improving customer trust and satisfaction.'
+      challenge: 'EasyProperties is a full-service estate agency managing sales, lettings, and property management. Negotiators and property managers were spending large parts of each day answering routine inbound calls and chasing outbound follow-ups. Growing lead volumes and client expectations for rapid responses made it difficult to maintain consistent service using only a traditional phone team.',
+      solution: 'ZEBA AI Calls implemented AI calling agents to handle both inbound and outbound calls. Inbound agents answered general queries, routed calls, provided basic property information, and logged messages. Outbound agents contacted potential buyers, tenants, and sellers, qualified their needs, confirmed budgets and locations, scheduled viewings or valuation appointments, and followed up on portal enquiries. For existing clients and landlords, the AI handled common questions and escalated only complex issues.',
+      results: 'EasyProperties reduced the manual workload on negotiators and property managers, giving them more time for in-person viewings, negotiations, and relationship management. The agency achieved higher lead-to-appointment conversion, faster response times, and meaningful reductions in the cost and time spent on cold calling and status-update calls. ZEBA AI Calls became a virtual extension of the office team.'
     }
   ];
 

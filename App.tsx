@@ -23,10 +23,10 @@ const App: React.FC = () => {
         <div id="solutions">
           <Solutions />
         </div>
+        <Languages />
         <div id="features">
           <Features />
         </div>
-        <Languages />
         <div id="case-studies">
           <CaseStudies />
         </div>
