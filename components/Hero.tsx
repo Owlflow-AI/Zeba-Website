@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
           </span>
-          <span className="ml-1">50+ Languages Supported</span>
+          <span className="ml-1">99+ Languages Supported</span>
           <ArrowRight size={12} className="opacity-70 ml-1" />
         </div>
 
