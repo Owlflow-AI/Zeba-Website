@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Logos Footer */}
-      <div className="absolute bottom-32 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+      <div className="absolute bottom-52 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
         <div className="max-w-6xl mx-auto flex flex-col items-center gap-4">
           <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-white/50 font-light text-center">
             integrate flawlessly with your stack
