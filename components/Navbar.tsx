@@ -74,12 +74,12 @@ const Navbar: React.FC = () => {
                 >
                   <div className="p-2">
                     <a href="#solutions" onClick={handleDropdownLinkClick} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
-                      <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xs">Tr</div>
-                      <span className="text-sm text-gray-300 group-hover:text-white">Trading</span>
+                      <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xs">CS</div>
+                      <span className="text-sm text-gray-300 group-hover:text-white">Customer Support</span>
                     </a>
                     <a href="#solutions" onClick={handleDropdownLinkClick} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
                       <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 text-xs">Fi</div>
-                      <span className="text-sm text-gray-300 group-hover:text-white">Fintech</span>
+                      <span className="text-sm text-gray-300 group-hover:text-white">Finance</span>
                     </a>
                     <a href="#solutions" onClick={handleDropdownLinkClick} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors group">
                       <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 text-xs">Re</div>

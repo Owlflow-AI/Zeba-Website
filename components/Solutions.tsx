@@ -3,11 +3,11 @@ import { LayoutGrid, Mic, Activity, ArrowRight, Play } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const Solutions: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('trading');
+  const [activeTab, setActiveTab] = useState('customersupport');
 
   const tabs = [
-    { id: 'trading', label: 'Trading', description: 'Real-time market updates and trade execution support via voice.' },
-    { id: 'fintech', label: 'Fintech', description: 'Secure account management, fraud alerts, and transaction history.' },
+    { id: 'customersupport', label: 'Customer Support', description: 'Real-time customer service and support via voice.' },
+    { id: 'finance', label: 'Finance', description: 'Secure account management, fraud alerts, and transaction history.' },
     { id: 'realestate', label: 'Real Estate', description: 'Qualify leads, schedule viewings, and answer property queries instantly.' },
     { id: 'healthcare', label: 'Health Care', description: 'Patient intake, appointment scheduling, and post-care follow-ups.' },
   ];
