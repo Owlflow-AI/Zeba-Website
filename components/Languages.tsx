@@ -29,7 +29,7 @@ const Languages: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
         <ScrollReveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-center text-white">
-            Zeba speaks 99+ languages<br />and works 24/7
+            Zeba Calls AI speaks 99+ languages<br />and works 24/7
           </h2>
         </ScrollReveal>
       </div>
