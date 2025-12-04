@@ -59,7 +59,7 @@ const StatsSection: React.FC = () => {
           {/* Left Text */}
           <div className={`max-w-md relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light leading-snug text-gray-100">
-              Solve your most complex support issues with AI, up and running in two weeks.
+              Solve your most complex support issues with AI, up and running in just a few days.
             </h2>
           </div>
 
