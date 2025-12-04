@@ -84,7 +84,7 @@ const Pricing: React.FC = () => {
               </div>
 
               <a
-                href="https://calendly.com/zqamar-zebaglobalai/30min"
+                href="https://cal.com/zeba-global-ai/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-white text-black text-center py-4 rounded-full text-base font-medium hover:bg-gray-200 transition-all hover:scale-[1.02]"
@@ -172,7 +172,7 @@ const Pricing: React.FC = () => {
               </div>
 
               <a
-                href="https://calendly.com/zqamar-zebaglobalai/30min"
+                href="https://cal.com/zeba-global-ai/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-white text-black text-center py-4 rounded-full text-base font-medium hover:bg-gray-200 transition-all hover:scale-[1.02]"

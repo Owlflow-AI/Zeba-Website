@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
 
         {/* Single CTA Button */}
         <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <a href="https://calendly.com/zqamar-zebaglobalai/30min" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+          <a href="https://cal.com/zeba-global-ai/30min" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
             Talk to us
           </a>
         </div>
