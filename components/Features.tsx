@@ -1,5 +1,5 @@
 import React from 'react';
-import { Share2, User, Globe, MessageSquare, ArrowRightLeft, BarChart3 } from 'lucide-react';
+import { Share2, User, Globe, MessageSquare, ArrowRightLeft, BarChart3, Database, CalendarCheck, PhoneCall } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const Features: React.FC = () => {
@@ -10,6 +10,9 @@ const Features: React.FC = () => {
     { icon: <MessageSquare />, title: "Smart Follow-ups", desc: "Automatic re-engagement." },
     { icon: <ArrowRightLeft />, title: "Seamless Handoff", desc: "Instant team transfer." },
     { icon: <BarChart3 />, title: "Real-time Analytics", desc: "Data-driven insights." },
+    { icon: <Database />, title: "Custom CRM Integrations", desc: "Sync with your existing systems." },
+    { icon: <CalendarCheck />, title: "Automated Appointments", desc: "Calendar integration built-in." },
+    { icon: <PhoneCall />, title: "Custom Voicemails & IVR", desc: "Smart detection and routing." },
   ];
 
   return (
