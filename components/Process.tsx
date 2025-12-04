@@ -109,7 +109,7 @@ const Process: React.FC = () => {
                 <div>
                   <h3 className="text-white font-semibold text-base sm:text-lg mb-1">3. Implementation</h3>
                   <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                    We build your solution with regular updates via Slack.
+                    We build your solution within few days with regular updates.
                   </p>
                 </div>
               </div>
