@@ -94,6 +94,7 @@ const Navbar: React.FC = () => {
               )}
             </div>
             <NavLink href="#faqs">FAQs</NavLink>
+            <NavLink href="#pricing">Pricing</NavLink>
             <NavLink href="#case-studies">Case Studies</NavLink>
           </div>
 
@@ -151,6 +152,7 @@ const Navbar: React.FC = () => {
               { label: 'Features', href: '#features' },
               { label: 'Solutions', href: '#solutions' },
               { label: 'FAQs', href: '#faqs' },
+              { label: 'Pricing', href: '#pricing' },
               { label: 'Case Studies', href: '#case-studies' }
             ].map((item, index) => (
               <a
