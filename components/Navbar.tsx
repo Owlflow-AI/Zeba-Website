@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
           {/* Right Action */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://cal.com/rahulhakhla/owlflowai"
+              href="https://calendly.com/zqamar-zebaglobalai/30min"
               target="_blank"
               rel="noopener noreferrer"
               className={`
@@ -167,11 +167,11 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="mt-auto">
-             <a href="https://cal.com/rahulhakhla/owlflowai" target="_blank" rel="noopener noreferrer" className="w-full bg-white text-black py-4 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors block text-center">
+             <a href="https://calendly.com/zqamar-zebaglobalai/30min" target="_blank" rel="noopener noreferrer" className="w-full bg-white text-black py-4 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors block text-center">
                 Talk to us
              </a>
              <p className="mt-6 text-center text-xs text-gray-500 uppercase tracking-widest">
-                Zeba Calls AI © 2024
+                Zeba AI © 2025
              </p>
           </div>
         </div>

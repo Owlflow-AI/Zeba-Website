@@ -7,7 +7,7 @@ import Features from './components/Features';
 import Languages from './components/Languages';
 import CaseStudies from './components/CaseStudies';
 import FAQ from './components/FAQ';
-import FinalCTA from './components/FinalCTA';
+import Pricing from './components/Pricing';
 import Terms from './components/Terms';
 import { Linkedin, Instagram } from 'lucide-react';
 
@@ -36,7 +36,9 @@ const App: React.FC = () => {
         <div id="faqs">
           <FAQ />
         </div>
-        <FinalCTA />
+        <div id="pricing">
+          <Pricing />
+        </div>
       </main>
       
       <footer className="py-12 sm:py-16 border-t border-white/10 bg-black text-gray-400">
