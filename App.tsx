@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StatsSection from './components/StatsSection';
@@ -8,9 +8,12 @@ import Languages from './components/Languages';
 import CaseStudies from './components/CaseStudies';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
+import Terms from './components/Terms';
 import { Linkedin, Instagram } from 'lucide-react';
 
 const App: React.FC = () => {
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20" role="application">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">
@@ -90,7 +93,12 @@ const App: React.FC = () => {
               >
                 FAQs
               </a>
-              <a href="#" className="hover:text-white transition-colors">Terms</a>
+              <button
+                onClick={() => setIsTermsOpen(true)}
+                className="hover:text-white transition-colors"
+              >
+                Terms
+              </button>
             </nav>
 
             <div className="flex gap-5">
@@ -131,6 +139,8 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      <Terms isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
     </div>
   );
 };

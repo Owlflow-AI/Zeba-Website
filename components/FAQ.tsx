@@ -4,6 +4,7 @@ import ScrollReveal from './ScrollReveal';
 
 const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   const faqs = [
     { q: "What exactly does Zeba's AI calling agent do?", a: "Zeba's AI agent makes and receives phone calls just like a trained human rep. It books appointments, qualifies leads, answers customer queries, gathers information, handles objections, and updates your CRM — all in real time, 24/7." },
@@ -34,7 +35,7 @@ const FAQ: React.FC = () => {
         </div>
 
         <div className="lg:w-2/3 flex flex-col gap-3 sm:gap-4">
-           {faqs.map((item, index) => (
+           {faqs.slice(0, showAll ? faqs.length : 6).map((item, index) => (
              <ScrollReveal key={index} delay={index * 100}>
                <div
                   className="border border-white/10 rounded-lg bg-[#0a0a0a] overflow-hidden transition-all duration-300"
@@ -54,6 +55,15 @@ const FAQ: React.FC = () => {
                </div>
              </ScrollReveal>
            ))}
+
+           {!showAll && faqs.length > 6 && (
+             <button
+               onClick={() => setShowAll(true)}
+               className="mt-4 self-center px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
+             >
+               See More
+             </button>
+           )}
         </div>
       </div>
     </section>
