@@ -54,21 +54,11 @@ const CaseStudies: React.FC = () => {
     }
   ];
 
-  const tripleStudies = [...caseStudies, ...caseStudies, ...caseStudies];
-
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      const cardWidth = container.scrollWidth / tripleStudies.length;
-      const middleStart = cardWidth * caseStudies.length;
-      container.scrollLeft = middleStart;
-    }
-  }, []);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const cardWidth = container.scrollWidth / tripleStudies.length;
+      const cardWidth = container.scrollWidth / caseStudies.length;
       const scrollAmount = cardWidth;
 
       const newScrollLeft = direction === 'left'
@@ -79,20 +69,6 @@ const CaseStudies: React.FC = () => {
         left: newScrollLeft,
         behavior: 'smooth'
       });
-
-      setTimeout(() => {
-        if (!container) return;
-
-        const totalWidth = container.scrollWidth;
-        const sectionWidth = totalWidth / 3;
-        const currentScroll = container.scrollLeft;
-
-        if (currentScroll <= 0) {
-          container.scrollLeft = sectionWidth;
-        } else if (currentScroll >= sectionWidth * 2) {
-          container.scrollLeft = sectionWidth;
-        }
-      }, 500);
     }
   };
 
@@ -125,7 +101,7 @@ const CaseStudies: React.FC = () => {
             className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 scrollbar-hide"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {tripleStudies.map((study, index) => (
+            {caseStudies.map((study, index) => (
               <div
                 key={index}
                 className="min-w-[280px] sm:min-w-[320px] md:min-w-[400px] lg:min-w-[500px] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-8 snap-center relative group flex-shrink-0"
@@ -155,7 +131,7 @@ const CaseStudies: React.FC = () => {
                        {study.description}
                     </p>
                     <button
-                      onClick={() => setSelectedStudy(index % caseStudies.length)}
+                      onClick={() => setSelectedStudy(index)}
                       className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center gap-2 text-xs sm:text-sm font-medium transition-colors"
                       style={{
                         backgroundColor: study.textColor === '#ffffff' ? '#ffffff' : '#000000',
