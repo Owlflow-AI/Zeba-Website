@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-start sm:justify-center items-center overflow-hidden">
+    <section className="relative w-full min-h-[85vh] sm:min-h-screen flex flex-col justify-start sm:justify-center items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-20 sm:pt-0">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-12 sm:pt-0">
 
         {/* Announcement Pill with Dot */}
         <div className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-md text-[9px] sm:text-[10px] font-light uppercase tracking-widest text-white cursor-pointer hover:bg-white/20 transition-colors animate-fade-in-down">
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Logos Footer */}
-      <div className="absolute bottom-28 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+      <div className="relative mt-14 sm:absolute sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
         <div className="max-w-6xl mx-auto flex flex-col items-center gap-4">
           <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-white/50 font-light text-center">
             integrate flawlessly with your stack
