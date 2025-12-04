@@ -6,11 +6,20 @@ const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
-    { q: "What does Zeba do?", a: "Zeba provides enterprise-grade AI voice agents that handle customer support, outbound sales, and operational tasks with human-like conversation capabilities." },
-    { q: "How do you prevent cheating in AI interviews?", a: "Our AI monitors for suspicious patterns, multiple voices, and uses browser locking technologies to ensure integrity during automated interviews." },
-    { q: "What does the AI report include?", a: "Reports include detailed call transcripts, sentiment analysis, action item extraction, and custom scoring metrics tailored to your use case." },
-    { q: "How customizable is Zeba?", a: "Extremely. You can configure voice tone, knowledge base, escalation rules, and integrate directly with your CRM and backend systems." },
-    { q: "How do you prevent AI bias?", a: "We train on diverse datasets and implement strict ethical guardrails to ensure fair and unbiased interactions across all demographics." },
+    { q: "What exactly does Zeba's AI calling agent do?", a: "Zeba's AI agent makes and receives phone calls just like a trained human rep. It books appointments, qualifies leads, answers customer queries, gathers information, handles objections, and updates your CRM — all in real time, 24/7." },
+    { q: "How natural does the AI sound on calls?", a: "Extremely natural. Zeba uses human-level conversational AI with tone matching, emotional cues, and dynamic response generation. Callers won't feel like they're talking to a chatbot — they experience a fluent, context-aware conversation." },
+    { q: "Can the AI handle complex or unpredictable conversations?", a: "Yes. Zeba's agent understands context, follows branching logic, asks clarifying questions, and adapts to the caller's intent. It handles objections, confusion, price enquiries, and follow-up questions smoothly." },
+    { q: "What types of calls can Zeba handle?", a: "Zeba supports: Outbound lead qualification, Appointment setting, Customer support, Order-taking, Follow-ups & reactivation, Satisfaction surveys, Payment reminders & collections, Inbound routing & FAQs. If a human rep can say it, Zeba can automate it." },
+    { q: "How accurate is the AI at understanding callers?", a: "Zeba uses advanced speech recognition tuned specifically for business calls. It handles different accents, background noise, interruptions, and fast speech with high accuracy." },
+    { q: "Can Zeba integrate with my CRM or booking system?", a: "Yes. Zeba connects with CRMs, calendars, ticketing systems, and databases. It can log calls, update lead status, book appointments, create tasks and notes, and trigger workflows — all automatically." },
+    { q: "How does Zeba handle objections or difficult conversations?", a: "The AI is trained on proven sales, customer service, and dialogue frameworks. It can de-escalate, clarify, provide alternatives, push for commitments, and transfer to a human if needed. It's built to convert and resolve — not just answer questions." },
+    { q: "Can people tell they're speaking to an AI?", a: "That's up to you. You can choose: Full transparency, Hybrid model, or Human-like introduction. Most businesses find callers engage normally either way." },
+    { q: "Does Zeba support multiple languages and accents?", a: "Yes. Zeba can speak and understand many global languages and adapt its tone & style to different regions." },
+    { q: "How quickly can I deploy an AI calling agent?", a: "Most clients are live within 24–48 hours. We set up scripts, integrations, call flows, and testing — you get a fully trained agent ready to start calling." },
+    { q: "Will the AI replace my team?", a: "Zeba is designed to augment, not replace. It handles repetitive, high-volume or low-skill conversations so your human team can focus on high-value calls." },
+    { q: "What happens if the AI gets stuck?", a: "If a conversation becomes too complex or falls outside its scope, Zeba can transfer to a human, escalate the case, create a follow-up ticket, or ask for additional information. It fails gracefully — never awkwardly." },
+    { q: "How does billing work?", a: "Pricing is simple and scalable. You only pay for minutes used or for a monthly plan tailored to your call volume." },
+    { q: "Is Zeba compliant and secure?", a: "Yes. Zeba supports GDPR, TCPA calling rules, secure data encryption, call recording controls, and redaction of sensitive data. Your customer information stays protected." },
   ];
 
   return (
@@ -38,7 +47,7 @@ const FAQ: React.FC = () => {
                    {openIndex === index ? <Minus className="text-white flex-shrink-0" size={18} /> : <Plus className="text-white flex-shrink-0" size={18} />}
                 </button>
                 <div
-                  className={`px-4 sm:px-5 md:px-6 text-gray-400 text-sm sm:text-base overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-48 pb-4 sm:pb-5 md:pb-6 opacity-100' : 'max-h-0 pb-0 opacity-0'}`}
+                  className={`px-4 sm:px-5 md:px-6 text-gray-400 text-sm sm:text-base overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 pb-4 sm:pb-5 md:pb-6 opacity-100' : 'max-h-0 pb-0 opacity-0'}`}
                 >
                    {item.a}
                 </div>
