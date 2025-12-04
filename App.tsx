@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import StatsSection from './components/StatsSection';
 import Solutions from './components/Solutions';
 import Features from './components/Features';
-import Testimonials from './components/Testimonials';
+import Languages from './components/Languages';
 import CaseStudies from './components/CaseStudies';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <div id="features">
           <Features />
         </div>
-        <Testimonials />
+        <Languages />
         <div id="case-studies">
           <CaseStudies />
         </div>
