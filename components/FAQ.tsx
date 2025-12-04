@@ -57,14 +57,16 @@ const FAQ: React.FC = () => {
            ))}
 
            {!showAll && faqs.length > 6 && (
-             <ScrollReveal delay={600}>
-               <button
-                 onClick={() => setShowAll(true)}
-                 className="mt-4 self-center px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
-               >
-                 See More
-               </button>
-             </ScrollReveal>
+             <div className="flex justify-center mt-4">
+               <ScrollReveal delay={600}>
+                 <button
+                   onClick={() => setShowAll(true)}
+                   className="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
+                 >
+                   See More
+                 </button>
+               </ScrollReveal>
+             </div>
            )}
         </div>
       </div>
