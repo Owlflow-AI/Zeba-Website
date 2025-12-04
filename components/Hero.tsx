@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
         {/* Subheadline */}
         <p className="text-sm sm:text-base md:text-lg text-white font-light mb-10 sm:mb-12 tracking-wide drop-shadow-lg max-w-xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          AI agents for enterprise support
+          AI calling agents tailored your business needs
         </p>
 
         {/* Single CTA Button */}
