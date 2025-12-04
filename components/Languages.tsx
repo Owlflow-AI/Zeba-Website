@@ -36,13 +36,13 @@ const Languages: React.FC = () => {
 
       {/* Upper Row - Scrolls Left */}
       <div className="relative mb-4 sm:mb-6">
-        <div className="flex gap-4 sm:gap-6 animate-scroll-left">
+        <div className="flex gap-4 sm:gap-6 animate-scroll-left md:animate-scroll-left-desktop">
           {[...upperLanguages, ...upperLanguages].map((lang, index) => (
             <div
               key={`upper-${index}`}
               className="flex-shrink-0 flex items-center gap-3 sm:gap-4 bg-[#0f0f0f] border border-white/10 rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 sm:py-5 min-w-[200px] sm:min-w-[240px]"
             >
-              <span className="text-3xl sm:text-4xl">{lang.flag}</span>
+              <span className="text-3xl sm:text-4xl flag-emoji">{lang.flag}</span>
               <span className="text-gray-300 text-base sm:text-lg font-light">{lang.name}</span>
             </div>
           ))}
@@ -51,13 +51,13 @@ const Languages: React.FC = () => {
 
       {/* Lower Row - Scrolls Right */}
       <div className="relative">
-        <div className="flex gap-4 sm:gap-6 animate-scroll-right">
+        <div className="flex gap-4 sm:gap-6 animate-scroll-right md:animate-scroll-right-desktop">
           {[...lowerLanguages, ...lowerLanguages].map((lang, index) => (
             <div
               key={`lower-${index}`}
               className="flex-shrink-0 flex items-center gap-3 sm:gap-4 bg-[#0f0f0f] border border-white/10 rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 sm:py-5 min-w-[200px] sm:min-w-[240px]"
             >
-              <span className="text-3xl sm:text-4xl">{lang.flag}</span>
+              <span className="text-3xl sm:text-4xl flag-emoji">{lang.flag}</span>
               <span className="text-gray-300 text-base sm:text-lg font-light">{lang.name}</span>
             </div>
           ))}
@@ -83,14 +83,35 @@ const Languages: React.FC = () => {
           }
         }
 
+        /* Mobile animations - faster speed */
         .animate-scroll-left {
           display: flex;
-          animation: scroll-left 30s linear infinite;
+          animation: scroll-left 15s linear infinite;
         }
 
         .animate-scroll-right {
           display: flex;
-          animation: scroll-right 30s linear infinite;
+          animation: scroll-right 15s linear infinite;
+        }
+
+        /* Desktop animations - normal speed */
+        @media (min-width: 768px) {
+          .animate-scroll-left-desktop {
+            animation: scroll-left 30s linear infinite;
+          }
+
+          .animate-scroll-right-desktop {
+            animation: scroll-right 30s linear infinite;
+          }
+        }
+
+        /* Ensure emojis render properly across browsers */
+        .flag-emoji {
+          font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 1;
+          display: inline-block;
         }
       `}</style>
     </section>

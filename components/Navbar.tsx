@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
           </a>
 
           {/* Desktop Links - Centered */}
-          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 absolute left-1/2 -translate-x-1/2 whitespace-nowrap">
             <NavLink href="#features">Features</NavLink>
             <div className="relative">
               <button
