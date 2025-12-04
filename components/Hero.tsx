@@ -77,9 +77,8 @@ const Hero: React.FC = () => {
               <span className="text-sm sm:text-base font-bold text-white/70 tracking-tight">Asana</span>
             </div>
 
-            {/* Notion Logo + Name */}
-            <div className="h-5 sm:h-6 flex items-center gap-2">
-              <span className="text-xl sm:text-2xl font-bold text-white/70" style={{ fontFamily: 'ui-sans-serif, system-ui' }}>N</span>
+            {/* Notion */}
+            <div className="h-5 sm:h-6 flex items-center">
               <span className="text-sm sm:text-base font-bold text-white/70 tracking-tight">Notion</span>
             </div>
 
