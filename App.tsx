@@ -31,12 +31,12 @@ const App: React.FC = () => {
         <div id="features">
           <Features />
         </div>
-        <div id="faqs">
-          <FAQ />
-        </div>
-        <Process />
         <div id="case-studies">
           <CaseStudies />
+        </div>
+        <Process />
+        <div id="faqs">
+          <FAQ />
         </div>
         <div id="pricing">
           <Pricing />
