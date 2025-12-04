@@ -49,10 +49,11 @@ const Navbar: React.FC = () => {
         <div className={navInnerClasses}>
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group z-50" onClick={(e) => { e.preventDefault(); window.location.reload(); }}>
-            <div className={`relative w-6 h-6 rounded-full bg-white overflow-hidden flex items-center justify-center transition-transform duration-500 ${isScrolled ? 'scale-90' : 'scale-100'}`}>
-               <div className="w-full h-[1px] bg-black rotate-45 transform origin-center scale-150"></div>
-               <div className="absolute w-[1px] h-full bg-black -rotate-45 transform origin-center scale-150 left-[45%]"></div>
-            </div>
+            <img
+              src="/whatsapp_image_2025-11-30_at_19.23.46-removebg-preview.png"
+              alt="Zeba Logo"
+              className={`transition-all duration-500 ${isScrolled ? 'h-8' : 'h-10'}`}
+            />
             <span className="text-lg font-light tracking-tight text-white">Zeba</span>
           </a>
 
@@ -130,10 +131,11 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col h-full p-6">
           <div className="flex justify-between items-center mb-12">
             <a href="/" onClick={(e) => { e.preventDefault(); window.location.reload(); }} className="flex items-center gap-2">
-              <div className="relative w-6 h-6 rounded-full bg-white overflow-hidden flex items-center justify-center">
-                 <div className="w-full h-[1px] bg-black rotate-45 transform origin-center scale-150"></div>
-                 <div className="absolute w-[1px] h-full bg-black -rotate-45 transform origin-center scale-150 left-[45%]"></div>
-              </div>
+              <img
+                src="/whatsapp_image_2025-11-30_at_19.23.46-removebg-preview.png"
+                alt="Zeba Logo"
+                className="h-10"
+              />
               <span className="text-xl font-semibold text-white">Zeba</span>
             </a>
             <button 
