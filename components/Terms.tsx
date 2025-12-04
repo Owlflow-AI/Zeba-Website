@@ -129,8 +129,7 @@ const Terms: React.FC<TermsProps> = ({ isOpen, onClose }) => {
                 For questions about these terms, please contact us at:
               </p>
               <p className="ml-4">
-                Email: legal@zeba.ai<br />
-                Address: Zeba AI, Inc.
+                Email: zeeshan@zebacalls.ai
               </p>
             </section>
           </div>

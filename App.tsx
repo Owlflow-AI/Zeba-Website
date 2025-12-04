@@ -125,7 +125,7 @@ const App: React.FC = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://www.tiktok.com/@zebaglobal.ai"
+                href="https://www.tiktok.com/@zebaglobalai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors flex items-center justify-center"
