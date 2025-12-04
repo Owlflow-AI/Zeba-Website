@@ -86,12 +86,12 @@ const Languages: React.FC = () => {
         /* Mobile animations - faster speed */
         .animate-scroll-left {
           display: flex;
-          animation: scroll-left 15s linear infinite;
+          animation: scroll-left 10s linear infinite;
         }
 
         .animate-scroll-right {
           display: flex;
-          animation: scroll-right 15s linear infinite;
+          animation: scroll-right 10s linear infinite;
         }
 
         /* Desktop animations - normal speed */
