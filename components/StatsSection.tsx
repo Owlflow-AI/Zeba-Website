@@ -49,11 +49,11 @@ const StatsSection: React.FC = () => {
   }, [isVisible, count1]);
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-black py-16 sm:py-20 md:py-24 lg:py-32">
+    <section ref={sectionRef} className="relative w-full bg-black py-16 sm:py-20 md:py-24 lg:py-32 max-w-full overflow-x-hidden">
       {/* Top Blur Shadow Effect */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/80 via-black/50 to-transparent pointer-events-none z-10 blur-sm"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-14 lg:gap-8 items-start">
 
           {/* Left Text */}

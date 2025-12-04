@@ -13,11 +13,11 @@ const Solutions: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-black py-16 sm:py-20 md:py-24 overflow-hidden border-t border-white/5">
+    <section className="relative bg-black py-16 sm:py-20 md:py-24 overflow-hidden border-t border-white/5 w-full max-w-full">
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-blue-900/10 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-full">
         {/* Top Section: Heading on Left, Subheading & CTA on Right */}
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16 mb-12 sm:mb-14 lg:mb-16">
           <ScrollReveal className="lg:w-1/2">

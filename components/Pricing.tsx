@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal';
 
 const Pricing: React.FC = () => {
   return (
-    <section className="bg-black py-20 sm:py-24 md:py-28 lg:py-32 border-t border-white/5 px-4 sm:px-6">
+    <section className="bg-black py-20 sm:py-24 md:py-28 lg:py-32 border-t border-white/5 px-4 sm:px-6 w-full max-w-full overflow-x-hidden">
       <div className="container mx-auto max-w-7xl">
 
         <ScrollReveal>

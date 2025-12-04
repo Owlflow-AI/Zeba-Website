@@ -25,8 +25,8 @@ const Languages: React.FC = () => {
   ];
 
   return (
-    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
+    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5 overflow-hidden w-full max-w-full">
+      <div className="container mx-auto px-4 sm:px-6 mb-12 sm:mb-16 max-w-full">
         <ScrollReveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-center text-white">
             Zeba Calls AI speaks 99+ languages<br />and works 24/7

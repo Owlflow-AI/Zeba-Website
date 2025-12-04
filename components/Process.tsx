@@ -58,8 +58,8 @@ const Process: React.FC = () => {
   };
 
   return (
-    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5">
-      <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-center">
+    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5 w-full max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-center max-w-full">
 
         {/* Left Content */}
         <div className="lg:w-1/2">

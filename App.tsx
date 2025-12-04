@@ -16,12 +16,12 @@ const App: React.FC = () => {
   const [isTermsOpen, setIsTermsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20" role="application">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20 overflow-x-hidden w-full" role="application">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">
         Skip to main content
       </a>
       <Navbar />
-      <main id="main-content">
+      <main id="main-content" className="overflow-x-hidden w-full">
         <Hero />
         <StatsSection />
         <div id="solutions">
@@ -43,8 +43,8 @@ const App: React.FC = () => {
         </div>
       </main>
       
-      <footer className="py-12 sm:py-16 border-t border-white/10 bg-black text-gray-400">
-        <div className="container mx-auto px-4 sm:px-6">
+      <footer className="py-12 sm:py-16 border-t border-white/10 bg-black text-gray-400 overflow-x-hidden w-full">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12">
 
             <div className="flex items-center gap-3">

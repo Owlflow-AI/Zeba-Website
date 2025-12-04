@@ -3,19 +3,19 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex flex-col justify-center items-center overflow-hidden max-w-full">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1652242190826-f1978b451b7f?q=80&w=2574&auto=format&fit=crop"
           alt="People on beach during daytime"
-          className="w-full h-full object-cover scale-105"
+          className="w-full h-full object-cover sm:scale-105"
         />
         {/* Bottom gradient overlay for seamless transition */}
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-8 sm:pt-0">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-8 sm:pt-0 max-w-full">
 
         {/* Announcement Pill with Dot */}
         <div className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-md text-[9px] sm:text-[10px] font-light uppercase tracking-widest text-white cursor-pointer hover:bg-white/20 transition-colors animate-fade-in-down">
@@ -46,12 +46,12 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Logos Footer */}
-      <div className="mt-8 sm:mt-0 sm:absolute sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-        <div className="max-w-6xl mx-auto flex flex-col items-center gap-4">
+      <div className="mt-8 sm:mt-0 sm:absolute sm:bottom-20 sm:left-0 sm:right-0 z-10 px-4 sm:px-6 animate-fade-in w-full max-w-full" style={{ animationDelay: '0.5s' }}>
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-4 w-full">
           <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-white/50 font-light text-center">
             integrate flawlessly with your stack
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 opacity-60 hover:opacity-90 transition-all duration-500">
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 opacity-60 hover:opacity-90 transition-all duration-500 max-w-full">
             {/* Slack Logo + Name */}
             <div className="h-5 sm:h-6 flex items-center gap-2">
               <svg className="h-4 sm:h-5 w-auto" viewBox="0 0 124 124" fill="none" xmlns="http://www.w3.org/2000/svg">

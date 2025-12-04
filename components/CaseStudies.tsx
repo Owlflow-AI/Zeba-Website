@@ -73,8 +73,8 @@ const CaseStudies: React.FC = () => {
   };
 
   return (
-    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5 overflow-hidden w-full max-w-full">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
         <ScrollReveal>
           <div className="flex justify-between items-end mb-8 sm:mb-10 md:mb-12">
              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white">Case studies</h2>

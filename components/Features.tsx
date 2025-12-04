@@ -17,8 +17,8 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="bg-black py-16 sm:py-20 md:py-24 border-t border-white/5 w-full max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
         <ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden">
             {features.map((feature, index) => (
