@@ -7,6 +7,7 @@ import Features from './components/Features';
 import Languages from './components/Languages';
 import CaseStudies from './components/CaseStudies';
 import FAQ from './components/FAQ';
+import Process from './components/Process';
 import Pricing from './components/Pricing';
 import Terms from './components/Terms';
 import { Linkedin, Instagram } from 'lucide-react';
@@ -30,11 +31,12 @@ const App: React.FC = () => {
         <div id="features">
           <Features />
         </div>
-        <div id="case-studies">
-          <CaseStudies />
-        </div>
         <div id="faqs">
           <FAQ />
+        </div>
+        <Process />
+        <div id="case-studies">
+          <CaseStudies />
         </div>
         <div id="pricing">
           <Pricing />
