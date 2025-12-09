@@ -112,76 +112,109 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
       {/* Widget Content */}
       <div className="relative z-10 flex flex-col items-center text-center w-full">
         <div className="mb-6 sm:mb-8">
-          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-gray-500 bg-white/5 px-2.5 sm:px-3 py-1 rounded-full border border-white/5">
+          <span className={`text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest bg-white/5 px-2.5 sm:px-3 py-1 rounded-full border border-white/5 transition-all duration-300 ${
+            isCallActive ? 'text-green-400 border-green-400/30 shadow-[0_0_15px_rgba(74,222,128,0.2)]' : 'text-gray-500'
+          }`}>
             {agentName} Agent
           </span>
         </div>
 
         {/* Call Container */}
         <div id={containerId} className="w-full flex flex-col items-center justify-center min-h-[200px]">
-          {!isCallActive && (
-            <>
-              {/* Mic Interaction Area */}
-              <div className="relative group cursor-pointer">
-                {/* Pulsing Rings */}
+          {/* Mic Interaction Area - Always Visible */}
+          <div className="relative group">
+            {/* Enhanced Pulsing Rings - More intense when call is active */}
+            {isCallActive && (
+              <>
+                <div className="absolute inset-0 bg-green-400/20 rounded-full animate-ping opacity-40"></div>
+                <div className="absolute inset-[-15px] sm:inset-[-20px] bg-green-400/10 rounded-full animate-pulse opacity-60"></div>
+                <div className="absolute inset-[-25px] sm:inset-[-30px] bg-green-400/5 rounded-full animate-pulse opacity-40" style={{ animationDelay: '0.3s' }}></div>
+              </>
+            )}
+            {!isCallActive && (
+              <>
                 <div className="absolute inset-0 bg-white/5 rounded-full animate-ping opacity-20 duration-1000"></div>
                 <div className="absolute inset-[-10px] sm:inset-[-12px] bg-white/5 rounded-full animate-pulse opacity-40 delay-75"></div>
+              </>
+            )}
 
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-gray-800 to-black border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:scale-105 transition-transform duration-300">
-                  <Mic size={28} className="sm:w-8 sm:h-8 text-white group-hover:text-blue-400 transition-colors" />
-                </div>
-              </div>
+            <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-gray-800 to-black border flex items-center justify-center transition-all duration-300 ${
+              isCallActive
+                ? 'border-green-400/40 shadow-[0_0_40px_rgba(74,222,128,0.3)] scale-110'
+                : 'border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:scale-105'
+            }`}>
+              <Mic size={28} className={`sm:w-8 sm:h-8 transition-all duration-300 ${
+                isCallActive
+                  ? 'text-green-400 animate-pulse'
+                  : 'text-white group-hover:text-blue-400'
+              }`} />
+            </div>
+          </div>
 
-              {/* Audio Waveform Visualization */}
-              <div className="h-12 sm:h-16 flex items-center gap-1 mt-8 sm:mt-10">
-                {[...Array(12)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-1 sm:w-1.5 bg-white/20 rounded-full animate-[pulse_1s_ease-in-out_infinite]"
-                    style={{
-                      height: `${Math.random() * 100}%`,
-                      animationDelay: `${i * 0.1}s`
-                    }}
-                  ></div>
-                ))}
-              </div>
+          {/* Audio Waveform Visualization - Always Visible, More Active During Call */}
+          <div className="h-12 sm:h-16 flex items-center gap-1 mt-8 sm:mt-10">
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={i}
+                className={`w-1 sm:w-1.5 rounded-full transition-colors duration-300 ${
+                  isCallActive
+                    ? 'bg-green-400/60 animate-[pulse_0.6s_ease-in-out_infinite]'
+                    : 'bg-white/20 animate-[pulse_1s_ease-in-out_infinite]'
+                }`}
+                style={{
+                  height: isCallActive ? `${20 + Math.random() * 80}%` : `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.1}s`
+                }}
+              ></div>
+            ))}
+          </div>
 
-              {error && (
-                <p className="mt-6 text-red-400 text-xs sm:text-sm font-light">
-                  {error}
-                </p>
+          {/* Status Text During Call */}
+          {isCallActive && (
+            <p className="mt-6 text-green-400 text-xs sm:text-sm font-light animate-pulse">
+              Call in progress...
+            </p>
+          )}
+
+          {/* Error Message */}
+          {error && !isCallActive && (
+            <p className="mt-6 text-red-400 text-xs sm:text-sm font-light">
+              {error}
+            </p>
+          )}
+
+          {/* Start Call Button - Only when not active */}
+          {!isCallActive && (
+            <button
+              onClick={startRetellWebCall}
+              disabled={isLoading}
+              className="mt-6 sm:mt-8 px-6 py-2.5 bg-white text-black rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            >
+              {isLoading ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                  Connecting...
+                </>
+              ) : (
+                <>
+                  <Phone size={14} />
+                  Start Call
+                </>
               )}
+            </button>
+          )}
 
-              <button
-                onClick={startRetellWebCall}
-                disabled={isLoading}
-                className="mt-6 sm:mt-8 px-6 py-2.5 bg-white text-black rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-              >
-                {isLoading ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-                    Connecting...
-                  </>
-                ) : (
-                  <>
-                    <Phone size={14} />
-                    Start Call
-                  </>
-                )}
-              </button>
-            </>
+          {/* End Call Button - Only when active */}
+          {isCallActive && (
+            <button
+              onClick={endCall}
+              className="mt-6 px-6 py-2.5 bg-red-500 text-white rounded-full text-xs sm:text-sm font-medium hover:bg-red-600 transition-colors flex items-center gap-2"
+            >
+              <Phone size={14} />
+              End Call
+            </button>
           )}
         </div>
-
-        {isCallActive && (
-          <button
-            onClick={endCall}
-            className="mt-6 px-6 py-2.5 bg-red-500 text-white rounded-full text-xs sm:text-sm font-medium hover:bg-red-600 transition-colors flex items-center gap-2"
-          >
-            <Phone size={14} />
-            End Call
-          </button>
-        )}
       </div>
     </div>
   );
