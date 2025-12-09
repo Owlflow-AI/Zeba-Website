@@ -7,6 +7,11 @@ interface RetellCallWidgetProps {
   containerId: string;
 }
 
+interface RetellSession {
+  join: () => Promise<void>;
+  stopCall: () => void;
+}
+
 declare global {
   interface Window {
     retellWeb: {
@@ -16,8 +21,7 @@ declare global {
         container: string;
         enableMic: boolean;
         enableCamera: boolean;
-      }) => void;
-      stopCall: () => void;
+      }) => Promise<RetellSession>;
     };
   }
 }
@@ -26,6 +30,7 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
   const [isCallActive, setIsCallActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [activeSession, setActiveSession] = useState<RetellSession | null>(null);
 
   const startRetellWebCall = async () => {
     setIsLoading(true);
@@ -50,18 +55,24 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
       const callId = session.call_id;
       const accessToken = session.access_token;
 
-      if (window.retellWeb) {
-        window.retellWeb.createSession({
-          callId: callId,
-          accessToken: accessToken,
-          container: "#" + containerId,
-          enableMic: true,
-          enableCamera: false
-        });
-        setIsCallActive(true);
-      } else {
+      if (!window.retellWeb) {
         setError("Retell SDK not loaded");
+        setIsLoading(false);
+        return;
       }
+
+      const callSession = await window.retellWeb.createSession({
+        callId: callId,
+        accessToken: accessToken,
+        container: "#" + containerId,
+        enableMic: true,
+        enableCamera: false
+      });
+
+      await callSession.join();
+
+      setActiveSession(callSession);
+      setIsCallActive(true);
     } catch (err) {
       setError("Error connecting to call service");
       console.error(err);
@@ -71,8 +82,9 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
   };
 
   const endCall = () => {
-    if (window.retellWeb) {
-      window.retellWeb.stopCall();
+    if (activeSession) {
+      activeSession.stopCall();
+      setActiveSession(null);
       setIsCallActive(false);
     }
   };
