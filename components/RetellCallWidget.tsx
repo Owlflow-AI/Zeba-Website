@@ -10,11 +10,12 @@ interface RetellCallWidgetProps {
 declare global {
   interface Window {
     retellWeb: {
-      startCall: (config: {
+      createSession: (config: {
         callId: string;
+        accessToken: string;
+        container: string;
         enableMic: boolean;
         enableCamera: boolean;
-        container: string;
       }) => void;
       stopCall: () => void;
     };
@@ -40,20 +41,22 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
       const data = await response.json();
 
       if (!data.success) {
-        setError("Failed to start call");
+        setError("Failed to start call: " + (data.error || "Unknown error"));
         setIsLoading(false);
         return;
       }
 
       const session = data.data;
       const callId = session.call_id;
+      const accessToken = session.access_token;
 
       if (window.retellWeb) {
-        window.retellWeb.startCall({
+        window.retellWeb.createSession({
           callId: callId,
+          accessToken: accessToken,
+          container: "#" + containerId,
           enableMic: true,
-          enableCamera: false,
-          container: "#" + containerId
+          enableCamera: false
         });
         setIsCallActive(true);
       } else {
