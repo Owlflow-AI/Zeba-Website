@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Mic, Phone } from 'lucide-react';
+import { RetellWebClient } from "retell-client-js-sdk";
 
 interface RetellCallWidgetProps {
   agentId: string;
@@ -7,30 +8,54 @@ interface RetellCallWidgetProps {
   containerId: string;
 }
 
-interface RetellSession {
-  join: () => Promise<void>;
-  stopCall: () => void;
-}
-
-declare global {
-  interface Window {
-    retellWeb: {
-      createSession: (config: {
-        callId: string;
-        accessToken: string;
-        container: string;
-        enableMic: boolean;
-        enableCamera: boolean;
-      }) => Promise<RetellSession>;
-    };
-  }
-}
-
 const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName, containerId }) => {
   const [isCallActive, setIsCallActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [activeSession, setActiveSession] = useState<RetellSession | null>(null);
+  const retellClientRef = useRef<RetellWebClient | null>(null);
+
+  useEffect(() => {
+    retellClientRef.current = new RetellWebClient();
+    const retellClient = retellClientRef.current;
+
+    retellClient.on("call_started", () => {
+      console.log("call started");
+      setIsCallActive(true);
+    });
+
+    retellClient.on("call_ended", () => {
+      console.log("call ended");
+      setIsCallActive(false);
+    });
+
+    retellClient.on("agent_start_talking", () => {
+      console.log("agent_start_talking");
+    });
+
+    retellClient.on("agent_stop_talking", () => {
+      console.log("agent_stop_talking");
+    });
+
+    retellClient.on("update", (update) => {
+      console.log("update", update);
+    });
+
+    retellClient.on("metadata", (metadata) => {
+      console.log("metadata", metadata);
+    });
+
+    retellClient.on("error", (error) => {
+      console.error("An error occurred:", error);
+      setError("Call error: " + error.message);
+      retellClient.stopCall();
+    });
+
+    return () => {
+      if (retellClientRef.current) {
+        retellClientRef.current.stopCall();
+      }
+    };
+  }, []);
 
   const startRetellWebCall = async () => {
     setIsLoading(true);
@@ -52,27 +77,17 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
       }
 
       const sessionData = data.data;
-      const callId = sessionData.call_id;
       const accessToken = sessionData.access_token;
 
-      if (!window.retellWeb) {
-        setError("Retell SDK not loaded");
+      if (!retellClientRef.current) {
+        setError("Retell SDK not initialized");
         setIsLoading(false);
         return;
       }
 
-      const callSession = await window.retellWeb.createSession({
-        callId: callId,
-        accessToken: accessToken,
-        container: "#" + containerId,
-        enableMic: true,
-        enableCamera: false
+      await retellClientRef.current.startCall({
+        accessToken: accessToken
       });
-
-      await callSession.join();
-
-      setActiveSession(callSession);
-      setIsCallActive(true);
 
     } catch (err) {
       console.error(err);
@@ -83,9 +98,8 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
   };
 
   const endCall = () => {
-    if (activeSession) {
-      activeSession.stopCall();
-      setActiveSession(null);
+    if (retellClientRef.current) {
+      retellClientRef.current.stopCall();
       setIsCallActive(false);
     }
   };
