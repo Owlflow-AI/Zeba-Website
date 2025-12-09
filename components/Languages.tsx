@@ -3,25 +3,25 @@ import ScrollReveal from './ScrollReveal';
 
 const Languages: React.FC = () => {
   const upperLanguages = [
-    { name: 'Japanese', flag: '🇯🇵' },
-    { name: 'Swedish', flag: '🇸🇪' },
-    { name: 'Arabic', flag: '🇸🇦' },
-    { name: 'Spanish', flag: '🇦🇷' },
-    { name: 'Bengali', flag: '🇧🇩' },
-    { name: 'French', flag: '🇫🇷' },
-    { name: 'German', flag: '🇩🇪' },
-    { name: 'Portuguese', flag: '🇵🇹' },
+    { name: 'Japanese', countryCode: 'jp' },
+    { name: 'Swedish', countryCode: 'se' },
+    { name: 'Arabic', countryCode: 'sa' },
+    { name: 'Spanish', countryCode: 'ar' },
+    { name: 'Bengali', countryCode: 'bd' },
+    { name: 'French', countryCode: 'fr' },
+    { name: 'German', countryCode: 'de' },
+    { name: 'Portuguese', countryCode: 'pt' },
   ];
 
   const lowerLanguages = [
-    { name: 'Italian', flag: '🇮🇹' },
-    { name: 'Korean', flag: '🇰🇷' },
-    { name: 'Mandarin (China)', flag: '🇨🇳' },
-    { name: 'Mandarin (TW)', flag: '🇹🇼' },
-    { name: 'Hindi', flag: '🇮🇳' },
-    { name: 'Russian', flag: '🇷🇺' },
-    { name: 'Turkish', flag: '🇹🇷' },
-    { name: 'Dutch', flag: '🇳🇱' },
+    { name: 'Italian', countryCode: 'it' },
+    { name: 'Korean', countryCode: 'kr' },
+    { name: 'Mandarin (China)', countryCode: 'cn' },
+    { name: 'Mandarin (TW)', countryCode: 'tw' },
+    { name: 'Hindi', countryCode: 'in' },
+    { name: 'Russian', countryCode: 'ru' },
+    { name: 'Turkish', countryCode: 'tr' },
+    { name: 'Dutch', countryCode: 'nl' },
   ];
 
   return (
@@ -42,7 +42,12 @@ const Languages: React.FC = () => {
               key={`upper-${index}`}
               className="flex-shrink-0 flex items-center gap-3 sm:gap-4 bg-[#0f0f0f] border border-white/10 rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 sm:py-5 min-w-[200px] sm:min-w-[240px]"
             >
-              <span className="text-3xl sm:text-4xl flag-emoji">{lang.flag}</span>
+              <img
+                src={`https://flagcdn.com/w40/${lang.countryCode}.png`}
+                srcSet={`https://flagcdn.com/w80/${lang.countryCode}.png 2x`}
+                alt={`${lang.name} flag`}
+                className="w-8 h-6 sm:w-10 sm:h-7 object-cover rounded"
+              />
               <span className="text-gray-300 text-base sm:text-lg font-light">{lang.name}</span>
             </div>
           ))}
@@ -57,7 +62,12 @@ const Languages: React.FC = () => {
               key={`lower-${index}`}
               className="flex-shrink-0 flex items-center gap-3 sm:gap-4 bg-[#0f0f0f] border border-white/10 rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 sm:py-5 min-w-[200px] sm:min-w-[240px]"
             >
-              <span className="text-3xl sm:text-4xl flag-emoji">{lang.flag}</span>
+              <img
+                src={`https://flagcdn.com/w40/${lang.countryCode}.png`}
+                srcSet={`https://flagcdn.com/w80/${lang.countryCode}.png 2x`}
+                alt={`${lang.name} flag`}
+                className="w-8 h-6 sm:w-10 sm:h-7 object-cover rounded"
+              />
               <span className="text-gray-300 text-base sm:text-lg font-light">{lang.name}</span>
             </div>
           ))}
@@ -103,15 +113,6 @@ const Languages: React.FC = () => {
           .animate-scroll-right-desktop {
             animation: scroll-right 30s linear infinite;
           }
-        }
-
-        /* Ensure emojis render properly across browsers */
-        .flag-emoji {
-          font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-          font-style: normal;
-          font-weight: normal;
-          line-height: 1;
-          display: inline-block;
         }
       `}</style>
     </section>
