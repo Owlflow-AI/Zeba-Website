@@ -51,9 +51,9 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
         return;
       }
 
-      const session = data.data;
-      const callId = session.call_id;
-      const accessToken = session.access_token;
+      const sessionData = data.data;
+      const callId = sessionData.call_id;
+      const accessToken = sessionData.access_token;
 
       if (!window.retellWeb) {
         setError("Retell SDK not loaded");
@@ -73,9 +73,10 @@ const RetellCallWidget: React.FC<RetellCallWidgetProps> = ({ agentId, agentName,
 
       setActiveSession(callSession);
       setIsCallActive(true);
+
     } catch (err) {
-      setError("Error connecting to call service");
       console.error(err);
+      setError("Error connecting to call service");
     } finally {
       setIsLoading(false);
     }
