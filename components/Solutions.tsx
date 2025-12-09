@@ -1,15 +1,40 @@
 import React, { useState } from 'react';
 import { LayoutGrid, Mic, Activity, ArrowRight, Play } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import RetellCallWidget from './RetellCallWidget';
 
 const Solutions: React.FC = () => {
   const [activeTab, setActiveTab] = useState('customersupport');
 
   const tabs = [
-    { id: 'customersupport', label: 'Customer Support', description: 'Real-time customer service and support via voice.' },
-    { id: 'finance', label: 'Finance', description: 'Secure account management, fraud alerts, and transaction history.' },
-    { id: 'realestate', label: 'Real Estate', description: 'Qualify leads, schedule viewings, and answer property queries instantly.' },
-    { id: 'healthcare', label: 'Health Care', description: 'Patient intake, appointment scheduling, and post-care follow-ups.' },
+    {
+      id: 'customersupport',
+      label: 'Customer Support',
+      description: 'Real-time customer service and support via voice.',
+      agentId: 'agent_11a7615f2731a7960a5687ab63',
+      containerId: 'retell-call-container-support'
+    },
+    {
+      id: 'finance',
+      label: 'Finance',
+      description: 'Secure account management, fraud alerts, and transaction history.',
+      agentId: 'agent_61c64519a33c3970979102c5ba',
+      containerId: 'retell-call-container-finance'
+    },
+    {
+      id: 'realestate',
+      label: 'Real Estate',
+      description: 'Qualify leads, schedule viewings, and answer property queries instantly.',
+      agentId: 'agent_6fba2ce568a62f24411777904d',
+      containerId: 'retell-call-container-realestate'
+    },
+    {
+      id: 'healthcare',
+      label: 'Health Care',
+      description: 'Patient intake, appointment scheduling, and post-care follow-ups.',
+      agentId: 'agent_41fbdae26dcec2082747955359',
+      containerId: 'retell-call-container-dental'
+    },
   ];
 
   return (
@@ -81,60 +106,12 @@ const Solutions: React.FC = () => {
 
           {/* Right: Widget Mockup */}
           <ScrollReveal delay={600} className="lg:w-[55%] w-full">
-            <div className="flex items-center justify-center lg:justify-start relative lg:pl-12">
-              <div className="demo-widget relative w-full max-w-md aspect-[4/5] sm:aspect-square bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 overflow-hidden">
-
-                  {/* Background Grid */}
-                  <div className="absolute inset-0 z-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-
-                  {/* Widget Content */}
-                  <div className="relative z-10 flex flex-col items-center text-center w-full">
-                      <div className="mb-6 sm:mb-8">
-                          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-gray-500 bg-white/5 px-2.5 sm:px-3 py-1 rounded-full border border-white/5">
-                              {tabs.find(t => t.id === activeTab)?.label} Agent
-                          </span>
-                      </div>
-
-                      {/* Mic Interaction Area */}
-                      <div className="relative group cursor-pointer">
-                          {/* Pulsing Rings */}
-                          <div className="absolute inset-0 bg-white/5 rounded-full animate-ping opacity-20 duration-1000"></div>
-                          <div className="absolute inset-[-10px] sm:inset-[-12px] bg-white/5 rounded-full animate-pulse opacity-40 delay-75"></div>
-
-                          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-gray-800 to-black border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:scale-105 transition-transform duration-300">
-                              <Mic size={28} className="sm:w-8 sm:h-8 text-white group-hover:text-blue-400 transition-colors" />
-                          </div>
-                      </div>
-
-                      {/* Audio Waveform Visualization */}
-                      <div className="h-12 sm:h-16 flex items-center gap-1 mt-8 sm:mt-10">
-                          {[...Array(12)].map((_, i) => (
-                               <div
-                                  key={i}
-                                  className="w-1 sm:w-1.5 bg-white/20 rounded-full animate-[pulse_1s_ease-in-out_infinite]"
-                                  style={{
-                                      height: `${Math.random() * 100}%`,
-                                      animationDelay: `${i * 0.1}s`
-                                  }}
-                               ></div>
-                          ))}
-                      </div>
-
-                      <p className="mt-6 sm:mt-8 text-gray-400 text-xs sm:text-sm font-light">
-                          Click to speak with our AI
-                      </p>
-
-                      {/* Mock Chat Overlay */}
-                      <div className="absolute bottom-[-100px] left-0 right-0 p-4 opacity-0 animate-[slideUp_0.5s_ease-out_forwards_0.2s]">
-                           <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/5">
-                               <div className="flex gap-2 items-center">
-                                   <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                                   <span className="text-xs text-gray-300">Agent Connected</span>
-                               </div>
-                           </div>
-                      </div>
-                  </div>
-              </div>
+            <div className="demo-widget flex items-center justify-center lg:justify-start relative lg:pl-12">
+              <RetellCallWidget
+                agentId={tabs.find(t => t.id === activeTab)?.agentId || ''}
+                agentName={tabs.find(t => t.id === activeTab)?.label || ''}
+                containerId={tabs.find(t => t.id === activeTab)?.containerId || ''}
+              />
             </div>
           </ScrollReveal>
         </div>
