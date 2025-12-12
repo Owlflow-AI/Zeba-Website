@@ -35,6 +35,13 @@ const Solutions: React.FC = () => {
       agentId: 'agent_41fbdae26dcec2082747955359',
       containerId: 'retell-call-container-dental'
     },
+    {
+      id: 'restaurant',
+      label: 'Restaurant',
+      description: 'Handle reservations, answer menu questions, and take orders 24/7.',
+      agentId: 'agent_9ef0196cf87d7fef260d6e0d45',
+      containerId: 'retell-call-container-restaurant'
+    },
   ];
 
   return (
