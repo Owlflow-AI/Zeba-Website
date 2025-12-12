@@ -8,10 +8,25 @@ const StatsSection: React.FC = () => {
   // Calculator state
   const [supportStaff, setSupportStaff] = useState(5);
   const [avgSalary, setAvgSalary] = useState(50000);
-  const [trainingCosts, setTrainingCosts] = useState(10000);
+  const [currency, setCurrency] = useState('USD');
+
+  // Currency symbols
+  const currencySymbols: { [key: string]: string } = {
+    'USD': '$',
+    'EUR': '€',
+    'GBP': '£',
+    'AED': 'د.إ',
+    'SAR': '﷼',
+    'INR': '₹',
+    'JPY': '¥',
+    'AUD': 'A$',
+    'CAD': 'C$'
+  };
+
+  const currencySymbol = currencySymbols[currency];
 
   // Calculate savings
-  const currentAnnualCost = (supportStaff * avgSalary) + trainingCosts;
+  const currentAnnualCost = supportStaff * avgSalary;
   const aiCost = currentAnnualCost * 0.3; // AI reduces costs by 70%
   const annualSavings = currentAnnualCost - aiCost;
   const monthlySavings = annualSavings / 12;
@@ -115,7 +130,7 @@ const StatsSection: React.FC = () => {
               {/* Average Salary Input */}
               <div className="flex flex-col gap-3">
                 <label className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-gray-500">
-                  Avg. Salary ($)
+                  Avg. Salary ({currencySymbol})
                 </label>
                 <input
                   type="number"
@@ -127,19 +142,26 @@ const StatsSection: React.FC = () => {
                 />
               </div>
 
-              {/* Training Costs Input */}
+              {/* Currency Selector */}
               <div className="flex flex-col gap-3">
                 <label className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-gray-500">
-                  Annual Training ($)
+                  Currency
                 </label>
-                <input
-                  type="number"
-                  min="0"
-                  step="1000"
-                  value={trainingCosts}
-                  onChange={(e) => setTrainingCosts(Math.max(0, parseInt(e.target.value) || 0))}
-                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-serif text-2xl sm:text-3xl focus:outline-none focus:border-white/30 transition-colors"
-                />
+                <select
+                  value={currency}
+                  onChange={(e) => setCurrency(e.target.value)}
+                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-serif text-2xl sm:text-3xl focus:outline-none focus:border-white/30 transition-colors appearance-none cursor-pointer"
+                >
+                  <option value="USD" className="bg-black">$ USD</option>
+                  <option value="EUR" className="bg-black">€ EUR</option>
+                  <option value="GBP" className="bg-black">£ GBP</option>
+                  <option value="AED" className="bg-black">د.إ AED</option>
+                  <option value="SAR" className="bg-black">﷼ SAR</option>
+                  <option value="INR" className="bg-black">₹ INR</option>
+                  <option value="JPY" className="bg-black">¥ JPY</option>
+                  <option value="AUD" className="bg-black">A$ AUD</option>
+                  <option value="CAD" className="bg-black">C$ CAD</option>
+                </select>
               </div>
 
             </div>
@@ -153,7 +175,7 @@ const StatsSection: React.FC = () => {
                   Current Annual Cost
                 </span>
                 <span className="font-serif text-3xl sm:text-4xl text-white/60 tracking-tighter">
-                  ${currentAnnualCost.toLocaleString()}
+                  {currencySymbol}{currentAnnualCost.toLocaleString()}
                 </span>
               </div>
 
@@ -163,7 +185,7 @@ const StatsSection: React.FC = () => {
                   With AI
                 </span>
                 <span className="font-serif text-3xl sm:text-4xl text-white/60 tracking-tighter">
-                  ${aiCost.toLocaleString()}
+                  {currencySymbol}{aiCost.toLocaleString()}
                 </span>
               </div>
 
@@ -173,7 +195,7 @@ const StatsSection: React.FC = () => {
                   Annual Savings
                 </span>
                 <span className="font-serif text-3xl sm:text-4xl text-green-400 tracking-tighter">
-                  ${annualSavings.toLocaleString()}
+                  {currencySymbol}{annualSavings.toLocaleString()}
                 </span>
               </div>
 
@@ -183,7 +205,7 @@ const StatsSection: React.FC = () => {
                   Monthly Savings
                 </span>
                 <span className="font-serif text-3xl sm:text-4xl text-green-400 tracking-tighter">
-                  ${monthlySavings.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                  {currencySymbol}{monthlySavings.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                 </span>
               </div>
 
